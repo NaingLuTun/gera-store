@@ -1,0 +1,81 @@
+:root {
+    /*////////// TEXTS //////////*/
+    --small-font-size: 12px;
+    --normal-font-size: 14px;
+    --large-font-size: 24px;
+    --normal-font-family: "Poppins", sans-serif;
+    --normal-font-weight: 400;
+    --heading-font-family: "Lora", serif;
+    --heading-font-weight: 500;
+    --text-color: #181e40;
+    --red-text-color: #f13b38;
+
+   /* ////////// MARGINS ////////// */
+   --menu-link-margins: 20px;
+   --navLogo-margin: 0 20px;
+}
+
+
+.menuModalLinksContainer {
+    font-family: var(--normal-font-family);
+    background-color: white;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.individualMenuModalLinksContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+.linkAndImgContainer {
+    display: flex;
+    align-items: center;
+}
+
+.linkImages {
+    width: 80px;
+}
+
+.linkArrows {
+    width: 30px;
+}
+
+.linkIcons {
+    width: 35px;
+}
+
+.userIconAndCartIconContainer {
+    padding: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+
+.userIconContainer {
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.userIconContainer, .cartIconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+
+
+.navLink {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: var(--menu-link-margins);
+}
+
+.newItemsLink {
+    color: var(--red-text-color);
+}

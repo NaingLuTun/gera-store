@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
+    /*////////// TEXTS //////////*/
   --small-font-size: 12px;
   --normal-font-size: 14px;
   --large-font-size: 24px;
@@ -9,20 +10,19 @@
   --heading-font-family: "Lora", serif;
   --heading-font-weight: 500;
   --text-color: #181e40;
+  --red-text-color: #f13b38;
 
-  --red-color: #f13b38;
-
-  --navBar-padding: 20px;
+    /* ////////// NAV BAR PROPERTIES ////////// */
+  --navBar-padding: 20px 10px;
   --navBar-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 
+    /* ////////// MARGINS ////////// */
   --margin-between-elements: 0 10px;
-  --navLogo-margin: 0 30px;
+  --navLogo-margin: 0 20px;
 
-  --searchBar-bg-color: #f4f4f4;
-  --searchBar-width: 200px;
-  --searchBar-input-padding: 7.5px 7.5px 7.5px 30px;
-  --searchBar-input-border-radius: 30px;
+
 }
+
 
 #navBar {
     width: 100%;
@@ -36,7 +36,7 @@
     
 }
 
-#navLinksContainer {
+#navMenuAndLogoContainer {
     display: flex;
     align-items: center;
 }
@@ -47,48 +47,53 @@
 }
 
 #navLogo {
+    width: 80px;
     margin: var(--navLogo-margin);
 }
 
-.navLink {
-    color: var(--text-color);
-    text-decoration: none;
+.userIcon, .cartIcon, .searchBarIcon {
     margin: var(--margin-between-elements);
 }
 
-.newItemsLink {
-    color: var(--red-color);
-}
-
-.searchBarContainer {
-    position: relative;
-    margin: var(--margin-between-elements);
-}
-
-.searchBar {
-    background-color: var(--searchBar-bg-color);
+.menu-button {
+    background-color: transparent;
     border: none;
-    font-size: var(--normal-font-size);
-    color: var(--text-color);
-    width: var(--searchBar-width);
-    border-radius: var(--searchBar-input-border-radius);
-    padding: var(--searchBar-input-padding);
-    
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-.searchBar:focus {
-    outline: none;
-}
-
-.searchBarIcon {
+.menu-icon, .menu-icon::before , .menu-icon::after {
+    background-color: black;
+    width: 30px;
+    height: 3px;
+    border-radius: 5px;
     position: absolute;
-    right: 5%;
-    top: 5%;
+    transition: all 0.5s;
 }
 
-.userIcon, .cartIcon {
-    margin: var(--margin-between-elements);
+.menu-icon::before, .menu-icon::after {
+    content: "";
+    width: 30px;
+    height: 3px;
 }
+
+.menu-icon::before {
+    transform: translate(-15px, -8px);
+}
+
+.menu-icon::after {
+    transform: translate(-15px, 8px);
+}
+
+.menu-button:focus {
+    outline: none;
+    border: none;
+}
+
 
 
 

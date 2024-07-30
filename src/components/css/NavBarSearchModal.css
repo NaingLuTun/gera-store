@@ -1,0 +1,141 @@
+:root {
+    /*////////// TEXTS //////////*/
+    --small-font-size: 12px;
+    --normal-font-size: 14px;
+    --large-font-size: 24px;
+    --normal-font-family: "Poppins", sans-serif;
+    --normal-font-weight: 400;
+    --heading-font-family: "Lora", serif;
+    --heading-font-weight: 500;
+    --text-color: #181e40;
+    --red-text-color: #f13b38;
+
+    /* ////////// SEARCH BAR PROPERTIES //////////*/
+    --searchBar-bg-color: #f4f4f4;
+    --searchBar-width: 100%;
+    --searchBar-input-padding: 12.5px 30px;
+    --searchBar-input-border-radius: 30px;
+}
+
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 1;
+    animation: appearFromRightSide 0.5s ease-out;
+}
+
+@keyframes appearFromRightSide {
+    0% {transform: translateX(500px);}
+    100% {transform: translateX(0);}
+}
+
+.overlay {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    line-height: 1.4;
+    background: white;
+    color: white;
+    padding: 20px 10px;
+    z-index: 2;
+}
+
+
+.searchIcon {
+    width: 30px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+}
+
+.closeModalButton {
+    background-color: transparent;
+    border: none;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.closeModalIcon, .closeModalIcon::before , .closeModalIcon::after {
+    background-color: black;
+    width: 30px;
+    height: 3px;
+    border-radius: 5px;
+    position: absolute;
+    transition: all 0.5s;
+}
+
+.closeModalIcon {
+    background-color: transparent;
+}
+
+.closeModalIcon::before, .closeModalIcon::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+}
+
+.closeModalIcon::before {
+    transform: translate(-15px, -8px);
+    transform: translateX(-15px) rotate(45deg);
+}
+
+.closeModalIcon::after {
+    transform: translate(-15px, 8px);
+    transform: translateX(-15px) rotate(-45deg);
+}
+
+.menu-button:focus {
+    outline: none;
+    border: none;
+}
+
+.searchBarContainer {
+    position: relative;
+    width: 100%;
+}
+
+.searchBar {
+    background-color: var(--searchBar-bg-color);
+    border: none;
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    width: var(--searchBar-width);
+    border-radius: var(--searchBar-input-border-radius);
+    padding: var(--searchBar-input-padding);
+    
+}
+
+.searchBar:focus {
+    outline: none;
+}
+
+.searchIcon {
+    width: 30px;
+    position: absolute;
+    top: 5.5px;
+    right: 20px;
+}
+
