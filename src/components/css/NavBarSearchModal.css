@@ -26,8 +26,8 @@
     right: 0;
     bottom: 0;
     position: fixed;
-    z-index: 1;
-    animation: appearFromRightSide 0.5s ease-out;
+    z-index: 5;
+    animation: appearFromRightSide 0.5s ease;
 }
 
 @keyframes appearFromRightSide {
@@ -52,7 +52,7 @@
     background: white;
     color: white;
     padding: 20px 10px;
-    z-index: 2;
+    z-index: 10;
 }
 
 

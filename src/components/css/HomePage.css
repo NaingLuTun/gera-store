@@ -1,6 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    /*////////// TEXTS //////////*/
+  --small-font-size: 12px;
+  --normal-font-size: 14px;
+  --large-font-size: 24px;
+  --extra-large-font-size: 40px;
+  --normal-font-family: "Poppins", sans-serif;
+  --normal-font-weight: 400;
+  --bold-font-weight: 600;
+  --heading-font-family: "Lora", serif;
+  --heading-font-weight: 500;
+  --text-color: #02040c;
+  --slider-text-color: #9b350d;
+  --red-text-color: #f13b38;
+}
 
 #homePage {
     height: 100vh;
-    overflow: hidden;
+    font-family: var(--normal-font-family);
+    color: var(--text-color);
+}
+
+.homePageTopImgSlider {
+    width: 100%;
+}
+
+.topIndividualImgSliderContainer {
+    width: 100%;
+    position: relative;
+}
+
+.topImageSliderText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--slider-text-color);
+    font-weight: var(--bold-font-weight);
+    font-size: var(--extra-large-font-size);
+}
+
+.homePageTopSliderImg {
+    width: 100%;
+}
+
+.topImageSliderButton {
+    font-family: var(--normal-font-family);
+    font-weight: var(--bold-font-weight);
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    padding: 5px 16px;
+    border: none;
+    border-radius: 3px;
+    
 }
