@@ -2,13 +2,13 @@ import NavBar from "./nav-bar/NavBar"
 
 
 import "./css/HomePage.css"
-import ActiveSlider from "./ActiveSlider"
+import HomePageTopImageSlider from "./HomePageTopImageSlider"
 function HomePage() {
   return (
     <div id="homePage">
         <NavBar />
 
-        <ActiveSlider/>
+        <HomePageTopImageSlider/>
             
 
         <p>Dark green</p>
