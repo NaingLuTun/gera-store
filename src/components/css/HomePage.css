@@ -10,16 +10,34 @@
   --normal-font-weight: 400;
   --bold-font-weight: 600;
   --heading-font-family: "Lora", serif;
-  --heading-font-weight: 500;
+  --heading-font-weight: 700;
   --text-color: #181e40;
   --slider-text-color: #9b350d;
   --red-text-color: #f13b38;
+
+  --each-section-margin: 50px 0;
+
+    /* ////////// newItemsContainer ////////// */
+    --slidersContainer-padding: 0 20px;
+
+    /* ////////// quoteSection ////////// */
+    --quoteSection-bg-color: #181e40;
+    --quoteSection-text-color: white;
+    --quoteSection-padding: 50px 20px;
+
+    /* ////////// deliverSection ////////// */
+    --deliverSection-padding: 0 20px;
+    
+    /* ////////// paymentSection ////////// */
+    --paymentsection-padding-btm: 50px;
 }
 
 #homePage {
     height: 100vh;
     font-family: var(--normal-font-family);
     color: var(--text-color);
+    font-size: var(--normal-font-size);
+
 }
 
 .homePageTopImgSlider {
@@ -55,5 +73,63 @@
     padding: 5px 16px;
     border: none;
     border-radius: 3px;
-    
+}
+
+.slidersContainer {
+    padding: var(--slidersContainer-padding);
+}
+
+.sectionContainer {
+    margin: var(--each-section-margin);
+}
+
+.sliderHeadingContainer {
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sliderHeading {
+    font-family: var(--heading-font-family);
+    font-weight: var(--heading-font-weight);
+    font-size: var(--large-font-size);
+}
+
+.sliderDiscoverLink {
+    font-family: var(--normal-font-family);
+    color: var(--text-color);
+}
+
+.sliderDiscoverLink:visited{
+    color: var(--text-color);
+}
+
+.quoteSection {
+    background-color: var(--quoteSection-bg-color);
+    color: var(--quoteSection-text-color);
+    font-size: var(--large-font-size);
+    text-align: center;
+    padding: var(--quoteSection-padding);
+}
+
+.deliverSection {
+    text-align: center;
+    padding: var(--deliverSection-padding);
+}
+
+.paymentSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding-bottom: var(--paymentsection-padding-btm);
+    margin-bottom: 0;
+}
+
+
+.paymentSection > img {
+    width: 350px;
 }

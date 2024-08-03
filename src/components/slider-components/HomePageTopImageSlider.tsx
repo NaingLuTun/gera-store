@@ -1,6 +1,6 @@
 import {Swiper, SwiperSlide} from "swiper/react"
 
-import "./css/ActiveSlider.css"
+import "../css/ActiveSlider.css"
 
 import "swiper/css"
 import "swiper/css/pagination"
@@ -8,9 +8,9 @@ import "swiper/css/navigation"
  
 import {Pagination} from "swiper/modules"
 
-import topImgSliderTextile from "../assets/slider_moblie_textile.jpg"
-import topImgSliderSneaker from "../assets/slider_moblie_sneaker.jpg"
-import topImgSliderAccessory from "../assets/slider_moblie_accessory.jpg"
+import topImgSliderTextile from "../../assets/slider_moblie_textile.jpg"
+import topImgSliderSneaker from "../../assets/slider_moblie_sneaker.jpg"
+import topImgSliderAccessory from "../../assets/slider_moblie_accessory.jpg"
 
 function HomePageTopImageSlider() {
   return (
