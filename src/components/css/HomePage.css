@@ -25,11 +25,7 @@
     --quoteSection-text-color: white;
     --quoteSection-padding: 50px 20px;
 
-    /* ////////// deliverSection ////////// */
-    --deliverSection-padding: 0 20px;
-    
-    /* ////////// paymentSection ////////// */
-    --paymentsection-padding-btm: 50px;
+
 }
 
 #homePage {
@@ -114,22 +110,3 @@
     padding: var(--quoteSection-padding);
 }
 
-.deliverSection {
-    text-align: center;
-    padding: var(--deliverSection-padding);
-}
-
-.paymentSection {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    padding-bottom: var(--paymentsection-padding-btm);
-    margin-bottom: 0;
-}
-
-
-.paymentSection > img {
-    width: 350px;
-}

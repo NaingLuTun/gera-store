@@ -10,9 +10,9 @@ import { scarf } from "./constants/accessoryImages"
 import { sock } from "./constants/accessoryImages"
 import { backpack } from "./constants/accessoryImages"
 
-import paymentImg from "../assets/paymentsImg.png"
 
 import NavBar from "./nav-bar/NavBar"
+import Footer from "./Footer"
 import { NewItemSlider } from "./slider-components/NewItemSlider"
 import { ItemSlider } from "./slider-components/ItemSlider"
 
@@ -77,17 +77,9 @@ function HomePage() {
           "At Gera, we sell environmentally friendly products designed for everyone. Our collections are crafted with a commitment to sustainability, allowing you to embrace a lifestyle that harmonizes with nature, whether you're in the city or exploring the great outdoors."
         </div>
 
-        <div className="deliverSection sectionContainer">
-          <p>We deliver our products nationwide across USA.</p>
-          <p>Return within 30 days</p>
-        </div>
+        
 
-        <div className="paymentSection sectionContainer">
-          <p>Secure payments</p>
-          <img src={paymentImg} alt="payments" />
-        </div>
-
-       
+       <Footer/>
     </div>
   )
 }
