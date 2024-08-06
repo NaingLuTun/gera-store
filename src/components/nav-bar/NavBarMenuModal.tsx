@@ -8,6 +8,8 @@ import rightArrow from "../../assets/arrow-sm-right-svgrepo-com.svg"
 import userIcon from "../../assets/user-svgrepo-com.svg"
 import cartIcon from "../../assets/bag-shopping-svgrepo-com.svg"
 
+import {Link} from "react-router-dom"
+
 interface NavBarMenuModalProps {
     menuActive: boolean,
     setMenuActive: React.Dispatch<React.SetStateAction<boolean>>
@@ -37,7 +39,7 @@ function NavBarMenuModal({menuActive, setMenuActive}: NavBarMenuModalProps) {
                 <div className="individualMenuModalLinksContainer">
                     <div className="linkAndImgContainer">
                         <img src={newItemsLinkImage} alt="new items" className="linkImages" />
-                        <a href="#" className="navLink newItemsLink">NEW</a>
+                        <Link to="/new-items" className="navLink newItemsLink">NEW</Link>
                     </div>
                     
                     <img src={rightArrow} alt="arrow" className="linkArrows" />

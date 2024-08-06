@@ -7,6 +7,8 @@ import searchBarIcon from "../../assets/search-alt-1-svgrepo-com.svg"
 import NavBarSearchModal from "./NavBarSearchModal"
 import NavBarMenuModal from "./NavBarMenuModal"
 
+import {Link} from "react-router-dom"
+
 import { useState } from "react"
 
 
@@ -29,7 +31,7 @@ function NavBar() {
                 <button onClick={handleMenuClick} className={`menu-button ${menuActive? "menuIsActive" : ""}`} >
                     <div className="menu-icon"></div>
                 </button>
-                <img src={logo} alt="logo" id="navLogo" />
+                <Link to="/home-page"><img src={logo} alt="logo" id="navLogo" /></Link>
                 
                 
             </div>

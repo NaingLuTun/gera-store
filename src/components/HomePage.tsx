@@ -18,6 +18,8 @@ import { ItemSlider } from "./slider-components/ItemSlider"
 
 import "./css/HomePage.css"
 import HomePageTopImageSlider from "./slider-components/HomePageTopImageSlider"
+
+import {Link} from "react-router-dom"
 function HomePage() {
   return (
     <div id="homePage">
@@ -29,7 +31,7 @@ function HomePage() {
         <div className="slidersContainer sectionContainer">
           <div className="sliderHeadingContainer">
             <h2 className="sliderHeading">NEW ITEMS</h2>
-            <a href="#" className="sliderDiscoverLink">Discover</a>
+            <Link to="/new-items" className="sliderDiscoverLink">Discover</Link>
           </div>
           <div>
             <NewItemSlider 
