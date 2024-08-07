@@ -128,6 +128,7 @@
 .individualProductsContainer {
     position: relative;
     width: 185px;
+    height: 230px;
     padding: 10px;
     margin: var(--page-content-margin);
 }
@@ -136,13 +137,17 @@
     width: 100%;
 }
 
+
+
 .swiper-button-next  {
     color: #02040f !important;
     height: 0;
+    z-index: 1;
 }
 .swiper-button-prev  {
     color: #02040f !important;
     height: 0;
+    z-index: 1;
 }
 
 .swiper-button-next:after {

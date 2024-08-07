@@ -5,6 +5,17 @@ import { Backpack } from "../constants/accessoryImages"
 import { Glove } from "../constants/accessoryImages"
 import { Scarf } from "../constants/accessoryImages"
 import { Sock } from "../constants/accessoryImages"
+
+import { allShirts } from "../constants/products"
+import { allTShirts } from "../constants/products"
+import { allMenSneakers } from "../constants/products"
+import { allWomenSneakers } from "../constants/products"
+import { allUnisexSneakers } from "../constants/products"
+import { allBackpacks } from "../constants/products"
+import { allSocks } from "../constants/products"
+import { allGloves } from "../constants/products"
+import { allScarves } from "../constants/products"
+
 import "../css/DisplayItemsSlider.css"
 
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -12,20 +23,14 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 
 interface ItemSliderProps {
-    tShirts?: TShirt[],
-    shirts?: Shirt[],
-    menSneaker?: Sneaker[],
-    womenSneaker?: Sneaker[],
-    unisexSneaker?: Sneaker[],
-    backpack?: Backpack[],
-    glove?: Glove[],
-    scarf?: Scarf[],
-    sock?: Sock[]
+    displayTextile?: boolean,
+    displaySneakers?: boolean,
+    displayAccessory?: boolean,
 }
 
-const ItemSlider = ({tShirts, shirts, menSneaker, womenSneaker, unisexSneaker, backpack, glove, scarf, sock}: ItemSliderProps) => {
+const ItemSlider = ({displayAccessory, displaySneakers, displayTextile}: ItemSliderProps) => {
     
-    const returnTextileItems = (items: Shirt[]| TShirt[] | undefined) => {
+    const returnTextileItems = (items: Shirt[] | TShirt[] | undefined) => {
         return items ? items.slice(0, 3).map(item => (
             <SwiperSlide key={item.id} className="individualSliderContainer">
                 <div className="flex flex-col relative w-[80%]" >
@@ -73,25 +78,25 @@ const ItemSlider = ({tShirts, shirts, menSneaker, womenSneaker, unisexSneaker, b
             loop={false} 
             slidesPerView={2}
             className="swiper-container">
-                {tShirts && shirts? 
+                {displayTextile? 
                 <>
-                    {tShirts && (<>{returnTextileItems(tShirts)}</>)}
-                    {shirts && (<>{returnTextileItems(shirts)}</>)}
+                    {allTShirts && (<>{returnTextileItems(allTShirts)}</>)}
+                    {allShirts && (<>{returnTextileItems(allShirts)}</>)}
                 </> : null}           
 
-                {menSneaker && womenSneaker && unisexSneaker ? 
+                {displaySneakers ? 
                 <>
-                    {menSneaker && (<>{returnSneakerItems(menSneaker)}</>)}
-                    {womenSneaker && (<>{returnSneakerItems(womenSneaker)}</>)}
-                    {unisexSneaker && (<>{returnSneakerItems(unisexSneaker)}</>)}
+                    {allMenSneakers && (<>{returnSneakerItems(allMenSneakers)}</>)}
+                    {allWomenSneakers && (<>{returnSneakerItems(allWomenSneakers)}</>)}
+                    {allUnisexSneakers && (<>{returnSneakerItems(allUnisexSneakers)}</>)}
                 </> : null}
 
-                {backpack && glove && scarf && sock ? 
+                {displayAccessory ? 
                 <>
-                    {backpack && (<>{returnAccessoryItems(backpack)}</>)}
-                    {glove && (<>{returnAccessoryItems(glove)}</>)}
-                    {scarf && (<>{returnAccessoryItems(scarf)}</>)}
-                    {sock && (<>{returnAccessoryItems(sock)}</>)}
+                    {allBackpacks && (<>{returnAccessoryItems(allBackpacks)}</>)}
+                    {allGloves && (<>{returnAccessoryItems(allGloves)}</>)}
+                    {allScarves && (<>{returnAccessoryItems(allScarves)}</>)}
+                    {allSocks && (<>{returnAccessoryItems(allSocks)}</>)}
                 </> : null}
 
             </Swiper>

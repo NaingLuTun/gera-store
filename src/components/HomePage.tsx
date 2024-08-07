@@ -1,15 +1,5 @@
 
 
-import { tShirts } from "./constants/textileImages"
-import { shirts } from "./constants/textileImages"
-import { menSneaker } from "./constants/sneakerImages"
-import { womenSneaker } from "./constants/sneakerImages"
-import { unisexSneaker } from "./constants/sneakerImages"
-import { glove } from "./constants/accessoryImages"
-import { scarf } from "./constants/accessoryImages"
-import { sock } from "./constants/accessoryImages"
-import { backpack } from "./constants/accessoryImages"
-
 
 import NavBar from "./nav-bar/NavBar"
 import Footer from "./Footer"
@@ -34,13 +24,7 @@ function HomePage() {
             <Link to="/new-items" className="sliderDiscoverLink">Discover</Link>
           </div>
           <div>
-            <NewItemSlider 
-            newItemTShirt={tShirts[2]} 
-            newItemShirt={shirts[1]} 
-            newItemMenSneaker={menSneaker[1]}
-            newItemWomenSneaker={womenSneaker[2]}
-            newItemUnisexSneaker={unisexSneaker[4]}
-            newItemBackpack={backpack[2]}/>
+            <NewItemSlider/>
           </div>
         </div>
 
@@ -51,7 +35,7 @@ function HomePage() {
           </div>
           <div>
             <ItemSlider 
-            tShirts={tShirts} shirts={shirts}/>
+            displayTextile/>
           </div>
         </div>
 
@@ -61,7 +45,7 @@ function HomePage() {
             <a href="#" className="sliderDiscoverLink">Discover</a>
           </div>
           <div>
-            <ItemSlider menSneaker={menSneaker} womenSneaker={womenSneaker} unisexSneaker={unisexSneaker}/>
+            <ItemSlider displaySneakers/>
           </div>
         </div>
 
@@ -71,7 +55,7 @@ function HomePage() {
             <a href="#" className="sliderDiscoverLink">Discover</a>
           </div>
           <div>
-            <ItemSlider backpack={backpack} glove={glove} scarf={scarf} sock={sock}/>
+            <ItemSlider displayAccessory/>
           </div>
         </div>
 

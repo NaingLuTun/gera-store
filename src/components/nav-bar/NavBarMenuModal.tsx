@@ -36,19 +36,21 @@ function NavBarMenuModal({menuActive, setMenuActive}: NavBarMenuModalProps) {
             </div>
 
             <div className="modal-content menuModalLinksContainer">
-                <div className="individualMenuModalLinksContainer">
+                
+                <Link to="/new-items" className="individualMenuModalLinksContainer">
                     <div className="linkAndImgContainer">
                         <img src={newItemsLinkImage} alt="new items" className="linkImages" />
-                        <Link to="/new-items" className="navLink newItemsLink">NEW</Link>
+                        <p className="navLink newItemsLink">NEW</p>
                     </div>
                     
                     <img src={rightArrow} alt="arrow" className="linkArrows" />
-                </div>
+                </Link>
+
 
                 <div className="individualMenuModalLinksContainer">
                     <div className="linkAndImgContainer">
                         <img src={textileLinkImage} alt="textile" className="linkImages" />
-                        <a href="#" className="navLink">TEXTILE</a>
+                        <p className="navLink">TEXTILE</p>
                     </div>
                     
                     <img src={rightArrow} alt="arrow" className="linkArrows" />
@@ -57,7 +59,7 @@ function NavBarMenuModal({menuActive, setMenuActive}: NavBarMenuModalProps) {
                 <div className="individualMenuModalLinksContainer">
                     <div className="linkAndImgContainer">
                         <img src={sneakerLinkImage} alt="sneakers" className="linkImages" />
-                        <a href="#" className="navLink">SNEAKERS</a>
+                        <p className="navLink">SNEAKERS</p>
                     </div>
 
                     <img src={rightArrow} alt="arrow" className="linkArrows" />
@@ -66,7 +68,7 @@ function NavBarMenuModal({menuActive, setMenuActive}: NavBarMenuModalProps) {
                 <div className="individualMenuModalLinksContainer">
                     <div className="linkAndImgContainer">
                         <img src={accessoryLinkImage} alt="accessories" className="linkImages" />
-                        <a href="#" className="navLink">ACCESSORY</a>
+                        <p className="navLink">ACCESSORY</p>
                     </div>
                     
                     <img src={rightArrow} alt="arrow" className="linkArrows" />

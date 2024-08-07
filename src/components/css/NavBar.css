@@ -39,6 +39,7 @@
 #navMenuAndLogoContainer {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 #searchBarUserAccountCartContainer {
@@ -48,6 +49,7 @@
 
 #navLogo {
     width: 80px;
+    height: 100%;
     margin: var(--navLogo-margin);
 }
 
@@ -59,7 +61,7 @@
     background-color: transparent;
     border: none;
     width: 48px;
-    height: 48px;
+    height: 24px;
     display: flex;
     justify-content: center;
     align-items: center;
