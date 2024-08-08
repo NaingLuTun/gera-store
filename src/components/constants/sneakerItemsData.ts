@@ -319,7 +319,7 @@ export const unisexSneaker: Array<Sneaker> = [
     },
     {
         id: "unisexWhiteAndGreySneaker",
-        name: "White and Grey Sneaker",
+        name: "White and Grey Sneaker - Unisex",
         color: "whiteAndGrey",
         img1: unisexWhiteAndGreySneakerImg1,
         img2: unisexWhiteAndGreySneakerImg2,

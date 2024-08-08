@@ -55,55 +55,14 @@ import whitePinkAndBlueImg1 from "../../assets/accessory-images/socks-images/whi
 import whitePinkAndBlueImg2 from "../../assets/accessory-images/socks-images/white-pink-and-blue-socks-image-2.jpg"
 import whitePinkAndBlueImg3 from "../../assets/accessory-images/socks-images/white-pink-and-blue-socks-image-3.jpg"
 
-export interface Backpack {
-    id: string,
-    name: string,
-    color: string,
-    img1: string,
-    img2: string,
-    img3: string,
-    img4: string,
-    price: number,
-    composition: string,
-    sewingCountry: string,
-    dyeingCountry: string,
-    manufacturingCountry: string,
-}
 
-export interface Glove {
+export interface Accessory {
     id: string,
     name: string,
     color: string,
     img1: string,
     img2: string,
-    price: number,
-    composition: string,
-    sewingCountry: string,
-    dyeingCountry: string,
-    manufacturingCountry: string,
-}
-
-export interface Scarf {
-    id: string,
-    name: string,
-    color: string,
-    img1: string,
-    img2: string,
-    img3: string,
-    price: number,
-    composition: string,
-    sewingCountry: string,
-    dyeingCountry: string,
-    manufacturingCountry: string,
-}
-
-export interface Sock {
-    id: string,
-    name: string,
-    color: string,
-    img1: string,
-    img2: string,
-    img3: string,
+    img3?: string,
     img4?: string,
     price: number,
     composition: string,
@@ -112,7 +71,7 @@ export interface Sock {
     manufacturingCountry: string,
 }
 
-export const backpack: Array<Backpack> = [
+export const backpack: Array<Accessory> = [
     {
         id: "whiteBackpack",
         name: "White Backpack",
@@ -172,7 +131,7 @@ export const backpack: Array<Backpack> = [
     
 ]
 
-export const glove: Array<Glove> = [
+export const glove: Array<Accessory> = [
     {
         id: "blackGlove",
         name: "Black Gloves",
@@ -199,7 +158,7 @@ export const glove: Array<Glove> = [
     },
 ]
 
-export const scarf: Array<Scarf> = [
+export const scarf: Array<Accessory> = [
     {
         id: "blueScarf",
         name: "Blue Scarf",
@@ -241,7 +200,7 @@ export const scarf: Array<Scarf> = [
     },
 ]
 
-export const sock: Array<Sock> = [
+export const sock: Array<Accessory> = [
     {
         id: "pinkAndGreenSock",
         name: "Pink and Green socks",
@@ -283,3 +242,5 @@ export const sock: Array<Sock> = [
         manufacturingCountry: "Thailand",
     },
 ]
+
+export const accessory = backpack.concat(glove.concat(scarf.concat(sock)))

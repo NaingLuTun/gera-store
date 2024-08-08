@@ -21,7 +21,7 @@ function HomePage() {
         <div className="slidersContainer sectionContainer">
           <div className="sliderHeadingContainer">
             <h2 className="sliderHeading">NEW ITEMS</h2>
-            <Link to="/new-items" className="sliderDiscoverLink">Discover</Link>
+            <Link to="/items-page" state={{view: "viewNewItems"}} className="sliderDiscoverLink">Discover</Link>
           </div>
           <div>
             <NewItemSlider/>
@@ -31,7 +31,7 @@ function HomePage() {
         <div className="slidersContainer sectionContainer">
           <div className="sliderHeadingContainer">
             <h2 className="sliderHeading">TEXTILE</h2>
-            <a href="#" className="sliderDiscoverLink">Discover</a>
+            <Link to="/items-page" state={{view: "viewTextile"}} className="sliderDiscoverLink">Discover</Link>
           </div>
           <div>
             <ItemSlider 
@@ -42,7 +42,7 @@ function HomePage() {
         <div className="slidersContainer sectionContainer">
           <div className="sliderHeadingContainer">
             <h2 className="sliderHeading">SNEAKERS</h2>
-            <a href="#" className="sliderDiscoverLink">Discover</a>
+            <Link to="/items-page" state={{view: "viewSneakers"}} className="sliderDiscoverLink">Discover</Link>
           </div>
           <div>
             <ItemSlider displaySneakers/>
@@ -52,7 +52,7 @@ function HomePage() {
         <div className="slidersContainer sectionContainer">
           <div className="sliderHeadingContainer">
             <h2 className="sliderHeading">ACCESSORY</h2>
-            <a href="#" className="sliderDiscoverLink">Discover</a>
+            <Link to="/items-page" state={{view: "viewAccessory"}} className="sliderDiscoverLink">Discover</Link>
           </div>
           <div>
             <ItemSlider displayAccessory/>

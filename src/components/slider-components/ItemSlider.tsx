@@ -1,26 +1,15 @@
-import { TShirt } from "../constants/textileImages"
-import { Shirt } from "../constants/textileImages"
-import { Sneaker } from "../constants/sneakerImages"
-import { Backpack } from "../constants/accessoryImages"
-import { Glove } from "../constants/accessoryImages"
-import { Scarf } from "../constants/accessoryImages"
-import { Sock } from "../constants/accessoryImages"
+import { Textile } from "../constants/textileItemsData"
+import { Sneaker } from "../constants/sneakerItemsData"
+import { Accessory } from "../constants/accessoryItemsData"
 
-import { allShirts } from "../constants/products"
-import { allTShirts } from "../constants/products"
-import { allMenSneakers } from "../constants/products"
-import { allWomenSneakers } from "../constants/products"
-import { allUnisexSneakers } from "../constants/products"
-import { allBackpacks } from "../constants/products"
-import { allSocks } from "../constants/products"
-import { allGloves } from "../constants/products"
-import { allScarves } from "../constants/products"
+import { ItemPageContext } from "../../contexts/ItemsPageContext"
 
 import "../css/DisplayItemsSlider.css"
 
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import "swiper/css"
+import { useContext } from "react"
 
 interface ItemSliderProps {
     displayTextile?: boolean,
@@ -29,8 +18,16 @@ interface ItemSliderProps {
 }
 
 const ItemSlider = ({displayAccessory, displaySneakers, displayTextile}: ItemSliderProps) => {
+
+    const ItemContext = useContext(ItemPageContext)
+
+    if(!ItemContext) {
+        throw new Error("useContext must be used within a ItemPageContextProvider")
+    }
+
+    const {allTShirts, allShirts, allMenSneakers, allWomenSneakers, allUnisexSneakers, allGloves, allBackpacks, allScarves, allSocks} = ItemContext
     
-    const returnTextileItems = (items: Shirt[] | TShirt[] | undefined) => {
+    const returnTextileItems = (items: Textile[] | undefined) => {
         return items ? items.slice(0, 3).map(item => (
             <SwiperSlide key={item.id} className="individualSliderContainer">
                 <div className="flex flex-col relative w-[80%]" >
@@ -55,7 +52,7 @@ const ItemSlider = ({displayAccessory, displaySneakers, displayTextile}: ItemSli
         )) : null
     }
 
-    const returnAccessoryItems = (items: Backpack[] | Glove[] | Sock[] | Scarf[] | undefined) => {
+    const returnAccessoryItems = (items: Accessory[] | undefined) => {
         return items ? items.slice(0, 1).map(item => (
             <SwiperSlide key={item.id} className="individualSliderContainer">
                 <div className="flex flex-col relative w-[80%]">

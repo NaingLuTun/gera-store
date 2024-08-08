@@ -62,7 +62,8 @@ import whiteShirtImg2 from "../../assets/textile-images/shirts-images/white-shir
 import whiteShirtImg3 from "../../assets/textile-images/shirts-images/white-shirt-image-3.jpg"
 import whiteShirtImg4 from "../../assets/textile-images/shirts-images/white-shirt-image-4.jpg"
 
-export interface TShirt {
+
+export interface Textile {
     id: string,
     name: string,
     color: string,
@@ -77,22 +78,10 @@ export interface TShirt {
     manufacturingCountry: string,
 }
 
-export interface Shirt {
-    id: string,
-    name: string,
-    color: string,
-    img1: string,
-    img2: string,
-    img3: string,
-    img4: string,
-    price: number,
-    composition: string,
-    sewingCountry: string,
-    dyeingCountry: string,
-    manufacturingCountry: string,
-}
 
-export const tShirts: Array<TShirt> = [
+
+
+export const tShirts: Array<Textile> = [
     {
         id: "whiteTShirt",
         name: "White T-shirt",
@@ -186,7 +175,7 @@ export const tShirts: Array<TShirt> = [
     },
 ]
 
-export const shirts: Array<Shirt> = [
+export const shirts: Array<Textile> = [
     {
         id: "whiteShirt",
         name: "White Shirt",
@@ -274,3 +263,5 @@ export const shirts: Array<Shirt> = [
     },
     
 ]
+
+export const textile = tShirts.concat(shirts)
