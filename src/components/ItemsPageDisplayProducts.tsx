@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 // Update the interface to accept a flat array of specific product types
 interface ItemsPageDisplayProductsProps {
@@ -15,10 +16,15 @@ interface ItemsPageDisplayProductsProps {
 }
 
 function ItemsPageDisplayProducts({ products }: ItemsPageDisplayProductsProps) {
+
+  const handleViewProduct = (product: Textile | Sneaker | Accessory): void =>  {
+      localStorage.setItem("viewItem", JSON.stringify(product))
+  }
+
   return (
     <>
       {products.map((product, index) => (
-        <div key={index} className="flex items-center justify-center flex-col individualProductsContainer">
+        <Link to="/view-item"><div onClick={() => handleViewProduct(product)} key={index} className="flex items-center justify-center flex-col individualProductsContainer">
           <Swiper
             grabCursor={true}
             centeredSlides={true}
@@ -56,7 +62,7 @@ function ItemsPageDisplayProducts({ products }: ItemsPageDisplayProductsProps) {
           </Swiper>
           <div className={`swiper-button-next swiper-button-next-${index}`}></div>
           <div className={`swiper-button-prev swiper-button-prev-${index}`}></div>
-        </div>
+        </div></Link>
       ))}
     </>
   );
