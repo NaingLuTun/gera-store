@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+        /*////////// TEXTS //////////*/
+    --small-font-size: 12px;
+    --normal-font-size: 14px;
+    --large-font-size: 24px;
+    --extra-large-font-size: 40px;
+    --normal-font-family: "Poppins", sans-serif;
+    --normal-font-weight: 400;
+    --bold-font-weight: 600;
+    --heading-font-family: "Lora", serif;
+    --heading-font-weight: 700;
+    --text-color: #181e40;
+    --slider-text-color: #9b350d;
+    --red-text-color: #f13b38;
+
+    --each-section-margin: 50px 0;
+    --page-content-padding: 0px 20px;
+    --page-content-margin: 25px 0;
+}
+
+.viewProductPage {
+    height: 100vh;
+    width: 100%;
+    font-family: var(--normal-font-family);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+}
+
+.viewProductImg {
+    width: 100%;
+}
+
+.productInfoSection {
+    padding: var(--page-content-padding);
+}
+
+.header {
+    font-family: var(--heading-font-family);
+    font-weight: var(--heading-font-weight);
+    font-size: var(--large-font-size);
+}
+
+.ratingStarsContainer {
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.ratingStars {
+    width: var(--normal-font-size);
+    margin-right: 3px;
+}
+
+.ratingText {
+    padding: 0 5px;
+}
+
+.sizeSection {
+    padding: var(--page-content-padding);
+}
+
+.sizeSection > p {
+    margin: 10px 0;
+}
+
+.sizeSelectorBtnContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
+
+.sizeSelectorBtn {
+    font-size: var(--normal-font-size);
+    font-family: var(--normal-font-family);
+    font-weight: var(--bold-font-weight);
+    color: var(--text-color);
+    padding: 12.5px 0;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+.selectedBtn {
+    background-color: var(--text-color);
+    color: white;
+}
+
+.featuresSection {
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 25px 20px;
+    margin: var(--page-content-margin);
+}
+
+.individualFeatureContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.individualFeatureContainer:last-child {
+    border: none;
+}
+
+.activeContainer {
+    border: none;
+}
+
+.featureValue {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    animation: dropDown 0.5s forwards;
+}
+
+
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
