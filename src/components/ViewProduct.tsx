@@ -2,11 +2,13 @@ import { Sneaker } from "./constants/sneakerItemsData"
 import { Textile } from "./constants/textileItemsData"
 import { Accessory } from "./constants/accessoryItemsData"
 
-import { shoeSizes } from "./constants/products"
-import { textileSizes } from "./constants/products"
+import { shoeSizes, numberOfRatings, textileSizes } from "./constants/products"
+
 
 import "./css/ViewProduct.css"
 import NavBar from "./nav-bar/NavBar";
+import { ViewProductRatingStars } from "./ViewProductRatingStars"
+import ViewProductReviewSection from "./ViewProductReviewSection"
 
 import {Swiper, SwiperSlide} from "swiper/react"
 import "./css/ActiveSlider.css"
@@ -15,9 +17,9 @@ import "swiper/css/pagination"
  
 import {Pagination} from "swiper/modules"
 
-import starIcon from "../assets/star.svg"
 import { useEffect, useState } from "react"
-const numberOfStars: Array<number> = [1, 2, 3, 4, 5] 
+import Footer from "./Footer"
+
 
 function ViewProduct() {
 
@@ -33,11 +35,6 @@ function ViewProduct() {
 
   let itemToView: Sneaker | Textile | Accessory | null = null;
   let itemImgs: Array<string> = []
-
- 
-  
-
-  
 
   // Safely parse the JSON string if it exists
   if (getToViewItem) {
@@ -99,14 +96,13 @@ function ViewProduct() {
       </div>
         
       <div className="productInfoSection">
+          
           <h2 className="productName header">{itemToView?.name}</h2>
           <p className="productPrice">${itemToView?.price}</p>
 
           <div className="ratingStarsContainer">
-            {numberOfStars.map((index) => (
-              <img key={index} src={starIcon} alt="rating star" className="ratingStars" />
-            ))}
-            <p className="ratingText">(3 reviews)</p>
+            <ViewProductRatingStars/>
+            <p className="ratingText">({numberOfRatings} reviews)</p>
           </div>
       </div>
       {itemType && (
@@ -156,8 +152,13 @@ function ViewProduct() {
           
         )}
       </div>
-            
+
+        <ViewProductReviewSection/>
+      
       </div>
+
+      <button className="addToCartBtn">Add to Cart</button>
+      <Footer />
     </div>
   )
 }

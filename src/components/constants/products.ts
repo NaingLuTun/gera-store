@@ -143,3 +143,6 @@ export const shoeSizes: Array<number> = [6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.
 // Shirt size
 export const textileSizes: Array<string> = ["XS", "S", "M", "L", "XL", "XXL"]
 
+export const ratingNumber: number = 5
+export const numberOfRatings: number = 3
+
