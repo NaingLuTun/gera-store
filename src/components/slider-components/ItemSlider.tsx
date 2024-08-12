@@ -27,14 +27,21 @@ const ItemSlider = ({displayAccessory, displaySneakers, displayTextile}: ItemSli
 
     const {allTShirts, allShirts, allMenSneakers, allWomenSneakers, allUnisexSneakers, allGloves, allBackpacks, allScarves, allSocks} = ItemContext
     
+    const handleViewProduct = (product: Textile | Sneaker | Accessory): void =>  {
+        localStorage.setItem("viewItem", JSON.stringify(product))
+    }
+
     const returnTextileItems = (items: Textile[] | undefined) => {
         return items ? items.slice(0, 3).map(item => (
             <SwiperSlide key={item.id} className="individualSliderContainer">
-                <div className="flex flex-col relative w-[80%]" >
-                    <img src={item.img1} alt="t-shirt" className="sliderImg"/>
-                    <p>{item.name}</p>
-                    <p>{`$${item.price}`}</p>
-                </div>
+                <a href="/view-item">
+                    <div onClick={() => handleViewProduct(item)} className="flex flex-col relative w-[80%]" >
+                        <img src={item.img1} alt="t-shirt" className="sliderImg"/>
+                        <p>{item.name}</p>
+                        <p>{`$${item.price}`}</p>
+                    </div>
+                </a>
+                
             </SwiperSlide>
         )) : null
     }
@@ -42,11 +49,13 @@ const ItemSlider = ({displayAccessory, displaySneakers, displayTextile}: ItemSli
     const returnSneakerItems = (items: Sneaker[] | undefined) => {
         return items ? items.slice(0, 2).map(item => (
             <SwiperSlide key={item.id} className="individualSliderContainer">
-                <div className="flex flex-col relative w-[80%]" >
-                    <img src={item.img1} alt="t-shirt" className="sliderImg"/>
-                    <p>{item.name}</p>
-                    <p>{`$${item.price}`}</p>
-                </div>
+                <a href="/view-item">
+                    <div onClick={() => handleViewProduct(item)} className="flex flex-col relative w-[80%]" >
+                        <img src={item.img1} alt="t-shirt" className="sliderImg"/>
+                        <p>{item.name}</p>
+                        <p>{`$${item.price}`}</p>
+                    </div>
+                </a>
             </SwiperSlide>
             
         )) : null
@@ -55,11 +64,13 @@ const ItemSlider = ({displayAccessory, displaySneakers, displayTextile}: ItemSli
     const returnAccessoryItems = (items: Accessory[] | undefined) => {
         return items ? items.slice(0, 1).map(item => (
             <SwiperSlide key={item.id} className="individualSliderContainer">
-                <div className="flex flex-col relative w-[80%]">
-                    <img src={item.img1} alt="t-shirt" className="sliderImg"/>
-                    <p>{item.name}</p>
-                    <p>{`$${item.price}`}</p>
-                </div>
+                <a href="/view-item">
+                    <div onClick={() => handleViewProduct(item)} className="flex flex-col relative w-[80%]">
+                        <img src={item.img1} alt="t-shirt" className="sliderImg"/>
+                        <p>{item.name}</p>
+                        <p>{`$${item.price}`}</p>
+                    </div>
+                </a>
             </SwiperSlide>
             
         )) : null

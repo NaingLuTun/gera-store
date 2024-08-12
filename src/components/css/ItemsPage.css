@@ -128,14 +128,26 @@
 
 .individualProductsContainer {
     position: relative;
+    font-family: var(--normal-font-family);
     width: 185px;
     height: 230px;
     padding: 10px;
     margin: var(--page-content-margin);
 }
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--text-color);
+}
+
+
+
 .productImg {
     width: 100%;
+    border-radius: 2.5px;
 }
 
 

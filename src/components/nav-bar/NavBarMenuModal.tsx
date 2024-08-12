@@ -37,8 +37,10 @@ function NavBarMenuModal({menuActive, setMenuActive}: NavBarMenuModalProps) {
 
             <div className="modal-content menuModalLinksContainer">
                 
-                <Link to="/new-items" className="individualMenuModalLinksContainer">
-                    <div className="linkAndImgContainer">
+                <Link to="/items-page" state={{view: "viewNewItems"}}
+                onClick={handleCloseModal}
+                className="individualMenuModalLinksContainer">
+                    <div  className="linkAndImgContainer">
                         <img src={newItemsLinkImage} alt="new items" className="linkImages" />
                         <p className="navLink newItemsLink">NEW</p>
                     </div>
@@ -47,32 +49,38 @@ function NavBarMenuModal({menuActive, setMenuActive}: NavBarMenuModalProps) {
                 </Link>
 
 
-                <div className="individualMenuModalLinksContainer">
+                <Link to="/items-page" state={{view: "viewTextile"}} 
+                onClick={handleCloseModal}
+                className="individualMenuModalLinksContainer">
                     <div className="linkAndImgContainer">
                         <img src={textileLinkImage} alt="textile" className="linkImages" />
                         <p className="navLink">TEXTILE</p>
                     </div>
                     
                     <img src={rightArrow} alt="arrow" className="linkArrows" />
-                </div>
+                </Link>
 
-                <div className="individualMenuModalLinksContainer">
+                <Link to="/items-page" state={{view: "viewSneakers"}} 
+                onClick={handleCloseModal}
+                className="individualMenuModalLinksContainer">
                     <div className="linkAndImgContainer">
                         <img src={sneakerLinkImage} alt="sneakers" className="linkImages" />
                         <p className="navLink">SNEAKERS</p>
                     </div>
 
                     <img src={rightArrow} alt="arrow" className="linkArrows" />
-                </div>
+                </Link>
 
-                <div className="individualMenuModalLinksContainer">
+                <Link to="/items-page" state={{view: "viewAccessory"}} 
+                onClick={handleCloseModal}
+                className="individualMenuModalLinksContainer">
                     <div className="linkAndImgContainer">
                         <img src={accessoryLinkImage} alt="accessories" className="linkImages" />
                         <p className="navLink">ACCESSORY</p>
                     </div>
                     
                     <img src={rightArrow} alt="arrow" className="linkArrows" />
-                </div>
+                </Link>
 
                 <div className="individualMenuModalLinksContainer userIconAndCartIconContainer">
                     <div className="userIconContainer">
