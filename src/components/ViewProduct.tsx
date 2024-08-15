@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState, useContext } from "react"
+
 import { Sneaker } from "./constants/sneakerItemsData"
 import { Textile } from "./constants/textileItemsData"
 import { Accessory } from "./constants/accessoryItemsData"
@@ -9,6 +11,7 @@ import "./css/ViewProduct.css"
 import NavBar from "./nav-bar/NavBar";
 import { ViewProductRatingStars } from "./ViewProductRatingStars"
 import ViewProductReviewSection from "./ViewProductReviewSection"
+import AddToCartModal from "./AddToCartModal"
 
 import {Swiper, SwiperSlide} from "swiper/react"
 import "./css/ActiveSlider.css"
@@ -17,19 +20,33 @@ import "swiper/css/pagination"
  
 import {Pagination} from "swiper/modules"
 
-import { useEffect, useState } from "react"
+
 import Footer from "./Footer"
+import { ItemPageContext } from "../contexts/ItemsPageContext"
 
 
 function ViewProduct() {
 
+  const ItemContext = useContext(ItemPageContext)
+
+  if(!ItemContext) {
+    throw new Error("useContext must be used within a ItemPageContextProvider")
+  }
+
+  const {addedCartItems, setAddedCartItems} = ItemContext
+
     const [selectedSize, setSelectedSize] = useState<number | null>(null)
     const [currentSizeSelectBtnList, setCurrentSizeSelectBtnList] = useState<Array<string> | Array<number> | null>(null);
     const [itemType, setItemType] = useState<"textile" | "sneaker" | null>(null);
+    
 
     
     const [viewComposition, setViewComposition] = useState(false)
     const [viewCharacteristics, setViewCharacteristics] = useState(false)
+
+    const [addToCartAvailable, setAddToCartAvailable] = useState<boolean | null>(null)
+    const [viewAddToCartAvailable, setViewAddToCartAvailable] = useState<boolean>(false)
+    const sizeSectionRef = useRef<HTMLDivElement>(null)
 
     const getToViewItem = localStorage.getItem("viewItem");
 
@@ -67,9 +84,50 @@ function ViewProduct() {
 
   
 
-  const handleSizeSelectBtnClick = (index: number) => {
+  const handleSizeSelectBtnClick = (index: number, size: string | number) => {
     setSelectedSize(index)
+    if(typeof size === "string") {
+      localStorage.setItem("size", size)
+    } else {
+      localStorage.setItem("shoe size", JSON.stringify(size))
+      
+    }
+    
   }
+
+  const addItem = (addedItem: Textile | Sneaker | Accessory | null) => {
+    
+    if(addedItem !== null) {
+      setAddedCartItems([...addedCartItems, addedItem])
+    }
+    
+  }
+
+  const handleAddToCart = (itemToView: Textile | Sneaker | Accessory | null) => {
+    console.log("function called")
+    if(itemType) {
+      if(selectedSize !== null) {
+          console.log("submitted")
+          setAddToCartAvailable(true)
+          setViewAddToCartAvailable(true)
+          addItem(itemToView)
+      } else {
+        console.log("cannot be submitted")
+        setAddToCartAvailable(false);
+        setViewAddToCartAvailable(false)
+
+        if (sizeSectionRef.current) {
+          sizeSectionRef.current.scrollIntoView({ behavior: "smooth" })
+        }
+      }
+    } else {
+      addItem(itemToView)
+      console.log("submitted no size")
+      
+    }
+    
+  }
+
   return (
     <div className="viewProductPage">
 
@@ -80,7 +138,7 @@ function ViewProduct() {
         <Swiper
         grabCursor={true} 
         centeredSlides={true} 
-        loop={true} 
+        loop={false} 
         slidesPerView={"auto"}
         className="swiper-container"
         pagination={{clickable: true}}
@@ -107,19 +165,21 @@ function ViewProduct() {
       </div>
       {itemType && (
 
-          <div className="sizeSection">
-            <p>Pick a size</p>
+          <div  ref={sizeSectionRef} className="sizeSection" >
+            <p className="boldText">Pick a size</p>
             <div className="sizeSelectorBtnContainer">
               {currentSizeSelectBtnList?.map((size, index) => (
                 <button 
-                onClick={() => handleSizeSelectBtnClick(index)} 
+                onClick={() => handleSizeSelectBtnClick(index, size)} 
                 key={index} 
                 className={`sizeSelectorBtn ${selectedSize === index ? "selectedBtn" : ""}`}>
                   {size}
                 </button>
               ))}
-            </div>
+
               
+            </div>
+            {addToCartAvailable === false && addToCartAvailable !== null ? <p className="errorText redText">Please choose a size.</p> : null}
           </div>
       )}
 
@@ -135,8 +195,8 @@ function ViewProduct() {
               <p>{itemToView?.composition}</p>
             </div>
           </>
-          
         )}
+
         <div onClick={() => setViewCharacteristics(!viewCharacteristics)} className={`individualFeatureContainer ${viewCharacteristics? "activeContainer" : ""}`}>
           <p>Characteristics</p>
           <p>+</p> 
@@ -157,8 +217,11 @@ function ViewProduct() {
       
       </div>
 
-      <button className="addToCartBtn">Add to Cart</button>
+      <button onClick={() => handleAddToCart(itemToView)} className="addToCartBtn">Add to Cart</button>
+      {viewAddToCartAvailable && <AddToCartModal setViewAddToCartAvailable={setViewAddToCartAvailable} itemImg={itemToView?.img1} itemName={itemToView?.name} itemPrice={itemToView?.price}/>}
+
       <Footer />
+
     </div>
   )
 }

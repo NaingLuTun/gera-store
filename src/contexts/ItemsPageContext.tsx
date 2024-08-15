@@ -1,33 +1,36 @@
-import { TShirt, Shirt } from "../components/constants/textileItemsData";
+
 import { Sneaker } from "../components/constants/sneakerItemsData";
-import { Backpack, Glove, Scarf, Sock } from "../components/constants/accessoryItemsData";
+import { Textile } from "../components/constants/textileItemsData";
+import { Accessory } from "../components/constants/accessoryItemsData";
 import { allNewProducts, newSneakers, newTextile, newAccessory, allSneakers, allMenSneakers, allWomenSneakers,allUnisexSneakers,allTextile, allTShirts, allShirts, allBackpacks, allGloves, allScarves, allSocks, allAccessory, pageLinks, productListBtns, newItemsPageHeaders, textileItemsPageHeaders, sneakerItemsPageHeaders, accessoryItemsPageHeaders, ItemPageHeaders } from "../components/constants/products";
 
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useState } from "react";
 
 interface ItemPageContextType {
-    allNewProducts: Array<TShirt | Shirt | Sneaker | Backpack>,
+    allNewProducts: Array<Textile | Sneaker | Accessory>,
     newSneakers: Array<Sneaker>,
-    newTextile: Array<TShirt | Shirt>,
-    newAccessory: Array<Backpack>,
-    allSneakers: Array<Sneaker[]>,
+    newTextile: Array<Textile>,
+    newAccessory: Array<Accessory>,
+    allSneakers: Array<Sneaker>,
     allMenSneakers: Array<Sneaker>,
     allWomenSneakers: Array<Sneaker>,
     allUnisexSneakers: Array<Sneaker>,
-    allTextile: Array<TShirt[] | Shirt[]>,
-    allTShirts: Array<TShirt>,
-    allShirts: Array<Shirt>,
-    allBackpacks: Array<Backpack>,
-    allGloves: Array<Glove>,
-    allScarves: Array<Scarf>,
-    allSocks: Array<Sock>,
-    allAccessory: Array<Backpack[] | Glove[] | Scarf[] | Sock[]>,
+    allTextile: Array<Textile>,
+    allTShirts: Array<Textile>,
+    allShirts: Array<Textile>,
+    allBackpacks: Array<Accessory>,
+    allGloves: Array<Accessory>,
+    allScarves: Array<Accessory>,
+    allSocks: Array<Accessory>,
+    allAccessory: Array<Accessory>,
     productListBtns: Array<Array<string>>,
     pageLinks: Array<string>,
     newItemsPageHeaders: Array<ItemPageHeaders>,
     textileItemsPageHeaders: Array<ItemPageHeaders>,
     sneakerItemsPageHeaders: Array<ItemPageHeaders>,
-    accessoryItemsPageHeaders: Array<ItemPageHeaders>
+    accessoryItemsPageHeaders: Array<ItemPageHeaders>,
+    addedCartItems: Array<Textile | Sneaker | Accessory>,
+    setAddedCartItems: React.Dispatch<React.SetStateAction<Array<Textile | Sneaker | Accessory>>>
 }
 
 interface ItemPageContextProviderProps {
@@ -38,6 +41,9 @@ interface ItemPageContextProviderProps {
 export const ItemPageContext = createContext<ItemPageContextType | undefined > (undefined)
 
 const ItemPageContextProvider = ({children}: ItemPageContextProviderProps) => {
+
+    const [addedCartItems, setAddedCartItems] = useState<Array<Textile | Sneaker | Accessory>>([])
+
     const contextValue: ItemPageContextType = {
         allNewProducts,
         newSneakers,
@@ -60,7 +66,9 @@ const ItemPageContextProvider = ({children}: ItemPageContextProviderProps) => {
         newItemsPageHeaders,
         textileItemsPageHeaders,
         sneakerItemsPageHeaders,
-        accessoryItemsPageHeaders
+        accessoryItemsPageHeaders,
+        addedCartItems,
+        setAddedCartItems
     }
     return (
         <ItemPageContext.Provider value={contextValue}>

@@ -4,6 +4,7 @@
         /*////////// TEXTS //////////*/
     --small-font-size: 12px;
     --normal-font-size: 14px;
+    --error-font-size: 18px;
     --large-font-size: 24px;
     --extra-large-font-size: 40px;
     --normal-font-family: "Poppins", sans-serif;
@@ -119,8 +120,10 @@
     padding: var(--page-content-padding);
 }
 
-.sizeSection > p {
+
+.boldText {
     margin: 10px 0;
+    font-weight: var(--bold-font-weight);
 }
 
 .sizeSelectorBtnContainer {
@@ -251,4 +254,9 @@
     background-color: var(--text-color);
     color: var(--addToCart-text-color);
     z-index: var(--addToCart-z-index);
+}
+
+.errorText {
+    color: var(--red-text-color);
+    font-size: var(--error-font-size);
 }
