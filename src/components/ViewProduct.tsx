@@ -23,21 +23,30 @@ import {Pagination} from "swiper/modules"
 
 import Footer from "./Footer"
 import { ItemPageContext } from "../contexts/ItemsPageContext"
+import CartItems from "./CartItems"
+
 
 
 function ViewProduct() {
 
-  const ItemContext = useContext(ItemPageContext)
+  const itemContext = useContext(ItemPageContext)
 
-  if(!ItemContext) {
+  if(!itemContext) {
     throw new Error("useContext must be used within a ItemPageContextProvider")
   }
 
-  const {addedCartItems, setAddedCartItems} = ItemContext
+  const {viewCart} = itemContext
+
+    const [itemsAddedToCart, setItemsAddedToCart] = useState<Array<Textile | Sneaker | Accessory | null>>(() => {
+      const savedItems = localStorage.getItem("cart-items")
+      return savedItems ? JSON.parse(savedItems) : []
+    })
 
     const [selectedSize, setSelectedSize] = useState<number | null>(null)
     const [currentSizeSelectBtnList, setCurrentSizeSelectBtnList] = useState<Array<string> | Array<number> | null>(null);
     const [itemType, setItemType] = useState<"textile" | "sneaker" | null>(null);
+
+
     
 
     
@@ -96,11 +105,33 @@ function ViewProduct() {
   }
 
   const addItem = (addedItem: Textile | Sneaker | Accessory | null) => {
-    
-    if(addedItem !== null) {
-      setAddedCartItems([...addedCartItems, addedItem])
+    if (addedItem !== null) {
+      const getAddedItems = localStorage.getItem("cart-items");
+  
+      // Parse existing cart items from local storage
+      let updatedCartItems: (Textile | Sneaker | Accessory)[] = getAddedItems ? JSON.parse(getAddedItems) : [];
+  
+      // Check if the item already exists in the cart
+      const existingItemIndex = updatedCartItems.findIndex(item => item.name === addedItem.name);
+  
+      if (existingItemIndex !== -1) {
+        // Item exists, increment the count
+        updatedCartItems[existingItemIndex].count = (updatedCartItems[existingItemIndex].count || 1) + 1;
+  
+        // Update the count in a separate local storage entry
+        localStorage.setItem(
+          addedItem.name,
+          JSON.stringify({ ...updatedCartItems[existingItemIndex], count: updatedCartItems[existingItemIndex].count })
+        );
+      } else {
+        // Item doesn't exist, add it to the cart with a count of 1
+        updatedCartItems.push({ ...addedItem, count: 1 });
+      }
+  
+      // Update state and local storage
+      setItemsAddedToCart(updatedCartItems);
+      localStorage.setItem("cart-items", JSON.stringify(updatedCartItems));
     }
-    
   }
 
   const handleAddToCart = (itemToView: Textile | Sneaker | Accessory | null) => {
@@ -122,6 +153,9 @@ function ViewProduct() {
       }
     } else {
       addItem(itemToView)
+      setAddToCartAvailable(true)
+      setViewAddToCartAvailable(true)
+      addItem(itemToView)
       console.log("submitted no size")
       
     }
@@ -131,7 +165,7 @@ function ViewProduct() {
   return (
     <div className="viewProductPage">
 
-      <NavBar/>
+      <NavBar />
       <div className="viewProductBody">
 
       <div className="flex items-center justify-center flex-col sliderContainer">
@@ -219,6 +253,8 @@ function ViewProduct() {
 
       <button onClick={() => handleAddToCart(itemToView)} className="addToCartBtn">Add to Cart</button>
       {viewAddToCartAvailable && <AddToCartModal setViewAddToCartAvailable={setViewAddToCartAvailable} itemImg={itemToView?.img1} itemName={itemToView?.name} itemPrice={itemToView?.price}/>}
+      
+      {viewCart && <CartItems />}
 
       <Footer />
 

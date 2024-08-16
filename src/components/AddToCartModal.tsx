@@ -22,14 +22,13 @@ function AddToCartModal({setViewAddToCartAvailable, itemName, itemImg, itemPrice
   }
 
   return (
-    <div className="cartModal">
-        <div className="cartModalContent">
-            <div className="cartModalHeadingContainer">
-              <h2 className="cartModalHeading">Added to cart!</h2>
+    <div className="addToCartModal">
+        <div className="addToCartModalContent">
+            <div className="addToCartModalHeadingContainer">
+              <h2 className="addToCartModalHeading">Added to cart!</h2>
             </div>
 
-            <div className="cartModalBody">
-              <div className="addedItemInfoContainer">
+            <div className="addToCartModalBody">
                 <div className="addedItemImgContainer">
                   <img src={itemImg} alt="product" className="addedItemImg"/>
                 </div>
@@ -40,12 +39,11 @@ function AddToCartModal({setViewAddToCartAvailable, itemName, itemImg, itemPrice
                   <p className="addedItemPrice">${itemPrice}</p>
                 </div>
                 
-              </div>
             </div>
 
             <div className="continueShoppingOrCheckOutBtnContainer">
-              <a href="/cart" className="checkoutBtn cartModalBtn">CheckOut</a>
-              <a onClick={() => setViewAddToCartAvailable(false)} className="continueShoppingBtn cartModalBtn">Continue shopping </a>
+              <a href="/cart" className="checkoutBtn addToCartModalBtn">CheckOut</a>
+              <a onClick={() => setViewAddToCartAvailable(false)} className="continueShoppingBtn addToCartModalBtn">Continue shopping </a>
             </div>
             
         </div>

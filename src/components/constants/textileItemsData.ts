@@ -76,6 +76,7 @@ export interface Textile {
     sewingCountry: string,
     dyeingCountry: string,
     manufacturingCountry: string,
+    count: number,
 }
 
 
@@ -95,7 +96,7 @@ export const tShirts: Array<Textile> = [
         sewingCountry: "Vietnam",
         dyeingCountry: "Vietnam",
         manufacturingCountry: "Vietname",
-        
+        count: 1,
     },
     {
         id: "blueTShirt",
@@ -110,7 +111,7 @@ export const tShirts: Array<Textile> = [
         sewingCountry: "Vietnam",
         dyeingCountry: "Vietnam",
         manufacturingCountry: "Vietname",
-        
+        count: 1,
     },
     {
         id: "greenTShirt",
@@ -125,7 +126,7 @@ export const tShirts: Array<Textile> = [
         sewingCountry: "Vietnam",
         dyeingCountry: "Vietnam",
         manufacturingCountry: "Vietname",
-        
+        count: 1,
     },
     {
         id: "pinkTShirt",
@@ -140,7 +141,7 @@ export const tShirts: Array<Textile> = [
         sewingCountry: "Vietnam",
         dyeingCountry: "Vietnam",
         manufacturingCountry: "Vietname",
-        
+        count: 1,
     },
     {
         id: "redTShirt",
@@ -155,7 +156,7 @@ export const tShirts: Array<Textile> = [
         sewingCountry: "Vietnam",
         dyeingCountry: "Vietnam",
         manufacturingCountry: "Vietname",
-        
+        count: 1,
     },
     
     {
@@ -171,7 +172,7 @@ export const tShirts: Array<Textile> = [
         sewingCountry: "Vietnam",
         dyeingCountry: "Vietnam",
         manufacturingCountry: "Vietname",
-        
+        count: 1,
     },
 ]
 
@@ -189,7 +190,7 @@ export const shirts: Array<Textile> = [
         sewingCountry: "Thailand",
         dyeingCountry: "Thailand",
         manufacturingCountry: "Thailand",
-        
+        count: 1,
     },
     {
         id: "blueShirt",
@@ -204,6 +205,7 @@ export const shirts: Array<Textile> = [
         sewingCountry: "Thailand",
         dyeingCountry: "Thailand",
         manufacturingCountry: "Thailand",
+        count: 1,
     },
     {
         id: "darkGreenShirt",
@@ -218,6 +220,7 @@ export const shirts: Array<Textile> = [
         sewingCountry: "Thailand",
         dyeingCountry: "Thailand",
         manufacturingCountry: "Thailand",
+        count: 1,
     },
     {
         id: "pinkShirt",
@@ -232,6 +235,7 @@ export const shirts: Array<Textile> = [
         sewingCountry: "Thailand",
         dyeingCountry: "Thailand",
         manufacturingCountry: "Thailand",
+        count: 1,
     },
     {
         id: "lightGreenShirt",
@@ -246,6 +250,7 @@ export const shirts: Array<Textile> = [
         sewingCountry: "Thailand",
         dyeingCountry: "Thailand",
         manufacturingCountry: "Thailand",
+        count: 1,
     },
     {
         id: "redShirt",
@@ -260,6 +265,7 @@ export const shirts: Array<Textile> = [
         sewingCountry: "Thailand",
         dyeingCountry: "Thailand",
         manufacturingCountry: "Thailand",
+        count: 1,
     },
     
 ]

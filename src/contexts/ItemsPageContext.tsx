@@ -29,8 +29,8 @@ interface ItemPageContextType {
     textileItemsPageHeaders: Array<ItemPageHeaders>,
     sneakerItemsPageHeaders: Array<ItemPageHeaders>,
     accessoryItemsPageHeaders: Array<ItemPageHeaders>,
-    addedCartItems: Array<Textile | Sneaker | Accessory>,
-    setAddedCartItems: React.Dispatch<React.SetStateAction<Array<Textile | Sneaker | Accessory>>>
+    viewCart: boolean,
+    setViewCart: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 interface ItemPageContextProviderProps {
@@ -42,7 +42,7 @@ export const ItemPageContext = createContext<ItemPageContextType | undefined > (
 
 const ItemPageContextProvider = ({children}: ItemPageContextProviderProps) => {
 
-    const [addedCartItems, setAddedCartItems] = useState<Array<Textile | Sneaker | Accessory>>([])
+    const [viewCart, setViewCart] = useState<boolean>(false)
 
     const contextValue: ItemPageContextType = {
         allNewProducts,
@@ -67,8 +67,8 @@ const ItemPageContextProvider = ({children}: ItemPageContextProviderProps) => {
         textileItemsPageHeaders,
         sneakerItemsPageHeaders,
         accessoryItemsPageHeaders,
-        addedCartItems,
-        setAddedCartItems
+        viewCart,
+        setViewCart
     }
     return (
         <ItemPageContext.Provider value={contextValue}>

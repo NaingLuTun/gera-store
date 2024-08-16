@@ -97,6 +97,7 @@ export interface Sneaker {
     sewingCountry: string,
     dyeingCounter: string,
     manufacturingCountry: string,
+    count: number,
 }
 
 export const menSneaker: Array<Sneaker> = [
@@ -113,6 +114,7 @@ export const menSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     {
         id: "menBlackSneaker",
@@ -127,6 +129,7 @@ export const menSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     {
         id: "menBlueSneaker",
@@ -141,6 +144,7 @@ export const menSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     {
         id: "menBrownSneaker",
@@ -155,6 +159,7 @@ export const menSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     {
         id: "menGreenSneaker",
@@ -169,6 +174,7 @@ export const menSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     {
         id: "menGreySneaker",
@@ -183,6 +189,7 @@ export const menSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     
 ]
@@ -201,6 +208,7 @@ export const womenSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     {
         id: "womenBlackSneaker",
@@ -215,6 +223,7 @@ export const womenSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     {
         id: "womenGreenSneaker",
@@ -229,6 +238,7 @@ export const womenSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     {
         id: "womenGreySneaker",
@@ -243,6 +253,7 @@ export const womenSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     {
         id: "womenPinkSneaker",
@@ -257,6 +268,7 @@ export const womenSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
 ]
 
@@ -274,6 +286,7 @@ export const unisexSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     {
         id: "unisexBlueSneaker",
@@ -288,6 +301,7 @@ export const unisexSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     {
         id: "unisexBrownSneaker",
@@ -302,6 +316,7 @@ export const unisexSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     {
         id: "unisexWhiteAndGreenSneaker",
@@ -316,6 +331,7 @@ export const unisexSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
     {
         id: "unisexWhiteAndGreySneaker",
@@ -330,5 +346,6 @@ export const unisexSneaker: Array<Sneaker> = [
         sewingCountry: "Vietnam",
         dyeingCounter: "Vietnam",
         manufacturingCountry: "Vietnam",
+        count: 1,
     },
 ]
