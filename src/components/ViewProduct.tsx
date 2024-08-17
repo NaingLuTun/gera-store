@@ -27,7 +27,11 @@ import CartItems from "./CartItems"
 
 
 
+
 function ViewProduct() {
+
+  const sizeRef = useRef<number | string | null>(null) 
+  const updatedItemSizeRef = useRef<Textile | Sneaker | Accessory>()
 
   const itemContext = useContext(ItemPageContext)
 
@@ -37,10 +41,7 @@ function ViewProduct() {
 
   const {viewCart} = itemContext
 
-    const [itemsAddedToCart, setItemsAddedToCart] = useState<Array<Textile | Sneaker | Accessory | null>>(() => {
-      const savedItems = localStorage.getItem("cart-items")
-      return savedItems ? JSON.parse(savedItems) : []
-    })
+    const [itemsAddedToCart, setItemsAddedToCart] = useState<Array<Textile | Sneaker | Accessory | null>>(() => JSON.parse(localStorage.getItem("cart-items") || "[]"))
 
     const [selectedSize, setSelectedSize] = useState<number | null>(null)
     const [currentSizeSelectBtnList, setCurrentSizeSelectBtnList] = useState<Array<string> | Array<number> | null>(null);
@@ -93,8 +94,14 @@ function ViewProduct() {
 
   
 
-  const handleSizeSelectBtnClick = (index: number, size: string | number) => {
+  const handleSizeSelectBtnClick = (index: number, size: string | number , itemToView: Textile | Sneaker | Accessory | null) => {
     setSelectedSize(index)
+    sizeRef.current = size
+    if(itemToView) {
+      updatedItemSizeRef.current = {...itemToView, size: sizeRef.current}
+    } 
+    
+
     if(typeof size === "string") {
       localStorage.setItem("size", size)
     } else {
@@ -105,62 +112,83 @@ function ViewProduct() {
   }
 
   const addItem = (addedItem: Textile | Sneaker | Accessory | null) => {
-    if (addedItem !== null) {
-      const getAddedItems = localStorage.getItem("cart-items");
+    if (!addedItem) return;
   
-      // Parse existing cart items from local storage
-      let updatedCartItems: (Textile | Sneaker | Accessory)[] = getAddedItems ? JSON.parse(getAddedItems) : [];
+    // Check if the item already exists in the cart based on name and size
+    const existingItemIndex = itemsAddedToCart.findIndex(
+      (item) =>
+        item &&
+        item.name === addedItem.name &&
+        item.size === addedItem.size
+    );
   
-      // Check if the item already exists in the cart
-      const existingItemIndex = updatedCartItems.findIndex(item => item.name === addedItem.name);
-  
-      if (existingItemIndex !== -1) {
-        // Item exists, increment the count
-        updatedCartItems[existingItemIndex].count = (updatedCartItems[existingItemIndex].count || 1) + 1;
-  
-        // Update the count in a separate local storage entry
-        localStorage.setItem(
-          addedItem.name,
-          JSON.stringify({ ...updatedCartItems[existingItemIndex], count: updatedCartItems[existingItemIndex].count })
-        );
-      } else {
-        // Item doesn't exist, add it to the cart with a count of 1
-        updatedCartItems.push({ ...addedItem, count: 1 });
-      }
-  
-      // Update state and local storage
-      setItemsAddedToCart(updatedCartItems);
-      localStorage.setItem("cart-items", JSON.stringify(updatedCartItems));
-    }
-  }
-
-  const handleAddToCart = (itemToView: Textile | Sneaker | Accessory | null) => {
-    console.log("function called")
-    if(itemType) {
-      if(selectedSize !== null) {
-          console.log("submitted")
-          setAddToCartAvailable(true)
-          setViewAddToCartAvailable(true)
-          addItem(itemToView)
-      } else {
-        console.log("cannot be submitted")
-        setAddToCartAvailable(false);
-        setViewAddToCartAvailable(false)
-
-        if (sizeSectionRef.current) {
-          sizeSectionRef.current.scrollIntoView({ behavior: "smooth" })
-        }
-      }
+    if (existingItemIndex !== -1) {
+      // Item exists, increment the count
+      const updatedItems = [...itemsAddedToCart] as (Textile | Sneaker | Accessory & { count: number })[];
+      updatedItems[existingItemIndex] = {
+        ...updatedItems[existingItemIndex],
+        count: (updatedItems[existingItemIndex]?.count || 1) + 1, // Default count to 1 if it doesn't exist
+      } as (Textile | Sneaker | Accessory & { count: number });
+      setItemsAddedToCart(updatedItems);
+      localStorage.setItem("cart-items", JSON.stringify(updatedItems));
     } else {
-      addItem(itemToView)
-      setAddToCartAvailable(true)
-      setViewAddToCartAvailable(true)
-      addItem(itemToView)
-      console.log("submitted no size")
-      
+      // Item does not exist, add it to the cart
+      const updatedArray = [...itemsAddedToCart, { ...addedItem, count: 1 }] as (Textile | Sneaker | Accessory & { count: number })[];
+      setItemsAddedToCart(updatedArray);
+      localStorage.setItem("cart-items", JSON.stringify(updatedArray));
     }
-    
-  }
+  
+    setSelectedSize(null);
+  };
+
+  const handleAddToCart = () => {
+    console.log("function called")
+    const updatedItem = updatedItemSizeRef.current
+    if (updatedItem) {
+        console.log(selectedSize)
+        if (itemType) {
+            if (selectedSize !== null) {
+                console.log("submitted")
+                setAddToCartAvailable(true)
+                setViewAddToCartAvailable(true)
+                addItem(updatedItem)
+            } else {
+                console.log("cannot be submitted")
+                setAddToCartAvailable(false)
+                setViewAddToCartAvailable(false)
+                if (sizeSectionRef.current) {
+                    sizeSectionRef.current.scrollIntoView({ behavior: "smooth" })
+                }
+            }
+        } else {
+            addItem(itemToView)
+            setAddToCartAvailable(true)
+            setViewAddToCartAvailable(true)
+            console.log("submitted no size")
+        }
+    } else {
+        if (itemType) {
+            if (selectedSize !== null) {
+                console.log("submitted")
+                setAddToCartAvailable(true)
+                setViewAddToCartAvailable(true)
+                addItem(itemToView)
+            } else {
+                console.log("cannot be submitted")
+                setAddToCartAvailable(false)
+                setViewAddToCartAvailable(false)
+                if (sizeSectionRef.current) {
+                    sizeSectionRef.current.scrollIntoView({ behavior: "smooth" })
+                }
+            }
+        } else {
+            addItem(itemToView)
+            setAddToCartAvailable(true)
+            setViewAddToCartAvailable(true)
+            console.log("submitted no size")
+        }
+    }
+}
 
   return (
     <div className="viewProductPage">
@@ -204,7 +232,7 @@ function ViewProduct() {
             <div className="sizeSelectorBtnContainer">
               {currentSizeSelectBtnList?.map((size, index) => (
                 <button 
-                onClick={() => handleSizeSelectBtnClick(index, size)} 
+                onClick={() => handleSizeSelectBtnClick(index, size, itemToView)} 
                 key={index} 
                 className={`sizeSelectorBtn ${selectedSize === index ? "selectedBtn" : ""}`}>
                   {size}
@@ -251,7 +279,7 @@ function ViewProduct() {
       
       </div>
 
-      <button onClick={() => handleAddToCart(itemToView)} className="addToCartBtn">Add to Cart</button>
+      <button onClick={handleAddToCart} className="addToCartBtn">Add to Cart</button>
       {viewAddToCartAvailable && <AddToCartModal setViewAddToCartAvailable={setViewAddToCartAvailable} itemImg={itemToView?.img1} itemName={itemToView?.name} itemPrice={itemToView?.price}/>}
       
       {viewCart && <CartItems />}

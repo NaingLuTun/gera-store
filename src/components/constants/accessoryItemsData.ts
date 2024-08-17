@@ -70,6 +70,7 @@ export interface Accessory {
     dyeingCountry: string,
     manufacturingCountry: string,
     count: number,
+    size: string | number | null,
 }
 
 export const backpack: Array<Accessory> = [
@@ -87,6 +88,7 @@ export const backpack: Array<Accessory> = [
         dyeingCountry: "Vietnam",
         manufacturingCountry: "Vietnam",
         count: 1,
+        size: null,
     },
     {
         id: "blueBackpack",
@@ -102,6 +104,7 @@ export const backpack: Array<Accessory> = [
         dyeingCountry: "Vietnam",
         manufacturingCountry: "Vietnam",
         count: 1,
+        size: null,
     },
     {
         id: "brownBackpack",
@@ -117,6 +120,7 @@ export const backpack: Array<Accessory> = [
         dyeingCountry: "Vietnam",
         manufacturingCountry: "Vietnam",
         count: 1,
+        size: null,
     },
     {
         id: "greenBackpack",
@@ -132,6 +136,7 @@ export const backpack: Array<Accessory> = [
         dyeingCountry: "Vietnam",
         manufacturingCountry: "Vietnam",
         count: 1,
+        size: null,
     },
     
 ]
@@ -149,6 +154,7 @@ export const glove: Array<Accessory> = [
         dyeingCountry: "Vietnam",
         manufacturingCountry: "Vietnam",
         count: 1,
+        size: null,
     },
     {
         id: "brownGlove",
@@ -162,6 +168,7 @@ export const glove: Array<Accessory> = [
         dyeingCountry: "Vietnam",
         manufacturingCountry: "Vietnam",
         count: 1,
+        size: null,
     },
 ]
 
@@ -179,6 +186,7 @@ export const scarf: Array<Accessory> = [
         dyeingCountry: "Thailand",
         manufacturingCountry: "Thailand",
         count: 1,
+        size: null,
     },
     {
         id: "greyScarf",
@@ -193,6 +201,7 @@ export const scarf: Array<Accessory> = [
         dyeingCountry: "Thailand",
         manufacturingCountry: "Thailand",
         count: 1,
+        size: null,
     },
     {
         id: "navyBlueScarf",
@@ -207,6 +216,7 @@ export const scarf: Array<Accessory> = [
         dyeingCountry: "Thailand",
         manufacturingCountry: "Thailand",
         count: 1,
+        size: null,
     },
 ]
 
@@ -224,6 +234,7 @@ export const sock: Array<Accessory> = [
         dyeingCountry: "Thailand",
         manufacturingCountry: "Thailand",
         count: 1,
+        size: null,
     },
     {
         id: "pinkBlueAndGreenSock",
@@ -239,6 +250,7 @@ export const sock: Array<Accessory> = [
         dyeingCountry: "Thailand",
         manufacturingCountry: "Thailand",
         count: 1,
+        size: null,
     },
     {
         id: "whitePinkAndBlueSock",
@@ -253,6 +265,7 @@ export const sock: Array<Accessory> = [
         dyeingCountry: "Thailand",
         manufacturingCountry: "Thailand",
         count: 1,
+        size: null,
     },
 ]
 
