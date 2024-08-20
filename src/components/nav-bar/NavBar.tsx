@@ -9,9 +9,7 @@ import NavBarMenuModal from "./NavBarMenuModal"
 
 import {Link} from "react-router-dom"
 
-import { useState, useContext } from "react"
-import { ItemPageContext } from "../../contexts/ItemsPageContext"
-import CartItems from "../CartItems"
+import { useState } from "react"
 
 
 
@@ -19,13 +17,6 @@ function NavBar() {
     const [menuActive, setMenuActive] = useState(false)
     const [searchBarActive, setSearchBarActive] = useState(false)
 
-    const itemContext = useContext(ItemPageContext)
-
-    if(!itemContext) {
-        throw new Error("useContext must be used within a ItemPageContextProvider")
-    }
-
-    const {viewCart, setViewCart} = itemContext
 
     const handleMenuClick = () => {
         setMenuActive(!menuActive)
@@ -35,9 +26,6 @@ function NavBar() {
         setSearchBarActive(!searchBarActive)
     }
 
-    const handleViewCart = () => {
-        setViewCart(true)
-    }
 
   return (
     <>
@@ -56,8 +44,8 @@ function NavBar() {
 
                 <img onClick={handleSearchBarClick} src={searchBarIcon} alt="searchbar icon" width="30px" className="searchBarIcon" />
                 
-                <img src={userIcon} alt="user account" width="30px" className="userIcon"/>
-                <img src={cartIcon} onClick={handleViewCart} alt="cart" width="30px" className="cartIcon"/>
+                <a href="/account" className="navBarLink"><img src={userIcon} alt="user account" width="30px" className="userIcon"/></a>
+                <a href="/cart" className="navBarLink"><img src={cartIcon} alt="cart" width="30px" className="cartIcon"/></a>
             </div>
         </div>
 
@@ -68,8 +56,6 @@ function NavBar() {
         {menuActive && <NavBarMenuModal 
                         menuActive = {menuActive}
                         setMenuActive = {setMenuActive}/>}
-
-        {viewCart && <CartItems />}
     </>
   )
 }

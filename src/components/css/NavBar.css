@@ -96,6 +96,11 @@
     border: none;
 }
 
+.navBarLink {
+    width: fit-content;
+    height: 30px;
+}
+
 
 
 

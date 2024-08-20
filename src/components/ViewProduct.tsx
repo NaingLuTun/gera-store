@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useContext } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import { Sneaker } from "./constants/sneakerItemsData"
 import { Textile } from "./constants/textileItemsData"
@@ -22,8 +22,6 @@ import {Pagination} from "swiper/modules"
 
 
 import Footer from "./Footer"
-import { ItemPageContext } from "../contexts/ItemsPageContext"
-import CartItems from "./CartItems"
 
 
 
@@ -32,14 +30,6 @@ function ViewProduct() {
 
   const sizeRef = useRef<number | string | null>(null) 
   const updatedItemSizeRef = useRef<Textile | Sneaker | Accessory>()
-
-  const itemContext = useContext(ItemPageContext)
-
-  if(!itemContext) {
-    throw new Error("useContext must be used within a ItemPageContextProvider")
-  }
-
-  const {viewCart} = itemContext
 
     const [itemsAddedToCart, setItemsAddedToCart] = useState<Array<Textile | Sneaker | Accessory | null>>(() => JSON.parse(localStorage.getItem("cart-items") || "[]"))
 
@@ -282,7 +272,6 @@ function ViewProduct() {
       <button onClick={handleAddToCart} className="addToCartBtn">Add to Cart</button>
       {viewAddToCartAvailable && <AddToCartModal setViewAddToCartAvailable={setViewAddToCartAvailable} itemImg={itemToView?.img1} itemName={itemToView?.name} itemPrice={itemToView?.price}/>}
       
-      {viewCart && <CartItems />}
 
       <Footer />
 

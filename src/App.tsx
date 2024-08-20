@@ -3,6 +3,7 @@ import HomePage from "./components/HomePage"
 import { ItemPageContextProvider } from "./contexts/ItemsPageContext"
 import { ItemsPage } from "./components/ItemsPage"
 import CartItems from "./components/CartItems"
+import AccountPage from "./components/AccountPage"
 
 import {BrowserRouter as Router, Route, Routes, Navigate} from "react-router-dom"
 import ViewProduct from "./components/ViewProduct"
@@ -18,6 +19,7 @@ const App: React.FC = () => {
           <Route path="/items-page" element={<ItemsPage/>}/>
           <Route path="/view-item" element={<ViewProduct/>}/>
           <Route path="/cart" element={<CartItems />}/>
+          <Route path="/account" element={<AccountPage />}/>
           <Route path="*" element={<Navigate to="/home-page" />}/>
         </Routes>
       </Router>

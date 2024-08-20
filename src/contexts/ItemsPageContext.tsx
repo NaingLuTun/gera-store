@@ -4,7 +4,9 @@ import { Textile } from "../components/constants/textileItemsData";
 import { Accessory } from "../components/constants/accessoryItemsData";
 import { allNewProducts, newSneakers, newTextile, newAccessory, allSneakers, allMenSneakers, allWomenSneakers,allUnisexSneakers,allTextile, allTShirts, allShirts, allBackpacks, allGloves, allScarves, allSocks, allAccessory, pageLinks, productListBtns, newItemsPageHeaders, textileItemsPageHeaders, sneakerItemsPageHeaders, accessoryItemsPageHeaders, ItemPageHeaders } from "../components/constants/products";
 
-import { createContext, ReactNode, useState } from "react";
+import { useState } from "react";
+
+import { createContext, ReactNode } from "react";
 
 interface ItemPageContextType {
     allNewProducts: Array<Textile | Sneaker | Accessory>,
@@ -29,8 +31,8 @@ interface ItemPageContextType {
     textileItemsPageHeaders: Array<ItemPageHeaders>,
     sneakerItemsPageHeaders: Array<ItemPageHeaders>,
     accessoryItemsPageHeaders: Array<ItemPageHeaders>,
-    viewCart: boolean,
-    setViewCart: React.Dispatch<React.SetStateAction<boolean>>
+    isLoggedIn: boolean,
+    setIsLoggedIn: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 interface ItemPageContextProviderProps {
@@ -41,8 +43,7 @@ interface ItemPageContextProviderProps {
 export const ItemPageContext = createContext<ItemPageContextType | undefined > (undefined)
 
 const ItemPageContextProvider = ({children}: ItemPageContextProviderProps) => {
-
-    const [viewCart, setViewCart] = useState<boolean>(false)
+    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false)
 
     const contextValue: ItemPageContextType = {
         allNewProducts,
@@ -67,8 +68,8 @@ const ItemPageContextProvider = ({children}: ItemPageContextProviderProps) => {
         textileItemsPageHeaders,
         sneakerItemsPageHeaders,
         accessoryItemsPageHeaders,
-        viewCart,
-        setViewCart
+        isLoggedIn,
+        setIsLoggedIn
     }
     return (
         <ItemPageContext.Provider value={contextValue}>
