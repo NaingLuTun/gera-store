@@ -44,8 +44,9 @@ function NavBar() {
 
                 <img onClick={handleSearchBarClick} src={searchBarIcon} alt="searchbar icon" width="30px" className="searchBarIcon" />
                 
-                <a href="/account" className="navBarLink"><img src={userIcon} alt="user account" width="30px" className="userIcon"/></a>
-                <a href="/cart" className="navBarLink"><img src={cartIcon} alt="cart" width="30px" className="cartIcon"/></a>
+                <Link to="/account" className="navBarLink"><img src={userIcon} alt="user account" width="30px" className="userIcon"/></Link>
+
+                <Link to="/cart" className="navBarLink"><img src={cartIcon} alt="cart" width="30px" className="cartIcon"/></Link>
             </div>
         </div>
 
