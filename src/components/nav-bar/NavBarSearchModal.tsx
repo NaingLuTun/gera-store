@@ -1,5 +1,6 @@
 import "../css/NavBarSearchModal.css"
 import searchIcon from "../../assets/search-alt-1-svgrepo-com.svg"
+import { Link } from "react-router-dom"
 
 interface NavBarSearchModalProps {
     searchBarActive: boolean,
@@ -25,9 +26,8 @@ function NavBarSearchModal({searchBarActive, setSearchBarActive}: NavBarSearchMo
 
                 <div className="searchBarContainer">
                     <input type="text" className="searchBar" placeholder="search"/>
-                    <img src={searchIcon} alt="search icon" className="searchIcon"/>
+                    <Link className="searchBarLink" to="/search"><img src={searchIcon} alt="search icon" className="searchIcon"/></Link>
                 </div>
-
             </div>
         </div>
     </>

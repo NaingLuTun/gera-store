@@ -7,6 +7,7 @@ import AccountPage from "./components/AccountPage"
 
 import {BrowserRouter as Router, Route, Routes, Navigate} from "react-router-dom"
 import ViewProduct from "./components/ViewProduct"
+import SearchPage from "./components/SearchPage"
 const App: React.FC = () => {
 
   
@@ -20,6 +21,7 @@ const App: React.FC = () => {
           <Route path="/view-item" element={<ViewProduct/>}/>
           <Route path="/cart" element={<CartItems />}/>
           <Route path="/account" element={<AccountPage />}/>
+          <Route path="/search" element={<SearchPage />} />
           <Route path="*" element={<Navigate to="/home-page" />}/>
         </Routes>
       </Router>
