@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --small-font-size: 12px;
+    --normal-font-size: 14px;
+    --input-font-size: 16px;
+    --large-font-size: 24px;
+    --extra-large-font-size: 40px;
+    --normal-font-family: "Poppins", sans-serif;
+    --normal-font-weight: 400;
+    --bold-font-weight: 600;
+    --heading-font-family: "Lora", serif;
+    --heading-font-weight: 700;
+    --text-color: #181e40;
+    --slider-text-color: #9b350d;
+    --red-text-color: #f13b38;
+
+    --page-content-padding: 0px 20px;
+    --page-content-margin: 25px 0;
+    --page-normal-border: 1px solid rgba(0, 0, 0, 0.3); 
+}
+
+.accountPage {
+    font-family: var(--normal-font-family);
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+
+}
+
+.signInSection, .registerSection {
+    padding: var(--page-content-padding);
+}
+
+.formHeader {
+    font-family: var(--heading-font-family);
+    font-size: var(--large-font-size);
+    font-weight: var(--heading-font-weight);
+    margin: 50px 0 25px 0;
+    text-align: center;
+}
+
+.exampleAccContainer {
+    margin-bottom: 25px;
+}
+
+.exampleAccText {
+    opacity: 0.8;
+}
+
+.exampleAccHeader {
+    margin-bottom: 10px;
+}
+
+.signInForm, .registerForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.signInInput, .registerInput {
+    padding: 20px 20px;
+    border: var(--page-normal-border);
+    border-radius: 10px;
+    font-size: var(--input-font-size);
+    color: var(--text-color);
+}
+
+.signInInput:focus, .registerInput:focus {
+    outline: none;
+    border: 1px solid #190058;
+}
+
+.signInButton, .registerButton {
+    padding: 15px 0 ;
+    background-color: var(--text-color);
+    color: white;
+    font-size: var(--normal-font-size);
+    border: none;
+    border-radius: 5px;
+}
+
+.forgotPasswordText {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+
+.errorMessage {
+    color: var(--red-text-color);
+    font-size: var(--small-font-size);
+}
+
+
+
