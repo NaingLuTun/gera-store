@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect } from "react"
 import { Textile } from "./constants/textileItemsData"
 import { Sneaker } from "./constants/sneakerItemsData"
 import { Accessory } from "./constants/accessoryItemsData"
@@ -7,21 +7,18 @@ import NavBar from "./nav-bar/NavBar"
 
 import crossIcon from "../assets/cross-circle-svgrepo-com.svg"
 import Footer from "./Footer"
-import { ItemPageContext } from "../contexts/ItemsPageContext"
 
 function CartItems() {
 
-    const loginContext = useContext(ItemPageContext)
-    if(!loginContext) {
-        throw new Error("useContext must be used within a ItemPageContextProvider")
-    }
-
-    /* const {isLoggedIn} = loginContext */
 
     // Use state to manage cartItems and totalItems
     const [cartItems, setCartItems] = useState<(Textile | Sneaker | Accessory)[]>([])
     const [totalItems, setTotalItems] = useState<number>(0)
     const [totalPrice, setTotalPrice] = useState<number>(0)
+
+    const [address, setAddress] = useState<string>("")
+
+
 
     // Load cart items from localStorage when the component mounts
     useEffect(() => {
@@ -108,6 +105,8 @@ function CartItems() {
         setTotalPrice(updatedTotalPrice)
     }
 
+
+
     return (
         <div className="cartPage">
             <NavBar />
@@ -168,6 +167,8 @@ function CartItems() {
                             Free
                         </p>
                     </div>
+
+
                     
                     <div className="finalTotalPriceContainer">
                         <p className="finalTotalPrice">Total</p>
@@ -177,11 +178,14 @@ function CartItems() {
 
                     </div>
 
-                    <div>
-                        <button className="finishOrderBtn">
-                            Finish your order
-                        </button>
-                    </div>
+                    <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Address (available in US states only)" className="addressInput"/>
+
+                                                
+                    <button className="finishOrderBtn">
+                         Finish your order
+                    </button>
+ 
+                    
 
                 </div>
             </div>

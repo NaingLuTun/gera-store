@@ -21,6 +21,14 @@
 }
 
 .accountPage {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.accountPageContent {
     font-family: var(--normal-font-family);
     font-size: var(--normal-font-size);
     color: var(--text-color);
@@ -71,7 +79,7 @@
     border: 1px solid #190058;
 }
 
-.signInButton, .registerButton {
+.signInButton, .registerButton, .logOutButton {
     padding: 15px 0 ;
     background-color: var(--text-color);
     color: white;
@@ -91,5 +99,28 @@
     font-size: var(--small-font-size);
 }
 
+.loggedInSection {
+    display: flex;
+    flex-direction: column;
+    padding: var(--page-content-padding);
+    justify-content: center;
+    text-align: center;
+    margin: var(--page-content-margin);
+    gap: 20px;
+}
 
+.loggedInHeading {
+    color: var(--text-color);
+    font-family: var(--heading-font-family);
+    font-size: var(--large-font-size);
+    font-weight: var(--heading-font-weight);
+}
 
+.loggedInEmail {
+    font-family: var(--normal-font-family);
+    font-size: var(--normal-font-size);
+}
+
+.backToHomeLink {
+    text-decoration: underline;
+}
