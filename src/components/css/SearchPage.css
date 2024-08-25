@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --small-font-size: 12px;
+    --normal-font-size: 14px;
+    --error-font-size: 18px;
+    --large-font-size: 24px;
+    --extra-large-font-size: 40px;
+    --normal-font-family: "Poppins", sans-serif;
+    --normal-font-weight: 400;
+    --bold-font-weight: 600;
+    --heading-font-family: "Lora", serif;
+    --heading-font-weight: 700;
+    --text-color: #181e40;
+    --slider-text-color: #9b350d;
+    --red-text-color: #f13b38;
+
+    --page-content-padding: 0px 20px;
+    --page-content-margin: 25px 0;
+    --page-normal-border: 1px solid rgba(0, 0, 0, 0.3); 
+}
+
+/* HTML: <div class="loader"></div> */
+
+.searchPageLoading {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid #514b82;
+    animation:
+      l20-1 0.8s infinite linear alternate,
+      l20-2 1.6s infinite linear;
+  }
+  @keyframes l20-1{
+     0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+     12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+     25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+     50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+     62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+     75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+     100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+  }
+  @keyframes l20-2{ 
+    0%    {transform:scaleY(1)  rotate(0deg)}
+    49.99%{transform:scaleY(1)  rotate(135deg)}
+    50%   {transform:scaleY(-1) rotate(0deg)}
+    100%  {transform:scaleY(-1) rotate(-135deg)}
+  }
+
+
+.searchPage {
+    width: 100%;
+    height: 100vh;
+    font-size: var(--normal-font-size);
+    font-family: var(--normal-font-family);
+    color: var(--text-color);
+}
+
+.searchPageHeadingContainer {
+    padding: var(--page-content-padding);
+    margin: var(--page-content-margin);
+}
+
+.searchPageHeader {
+    font-size: var(--large-font-size);
+    font-family: var(--heading-font-family);
+    font-weight: var(--heading-font-weight);
+}
+
+
+.searchedItemsContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: var(--page-content-padding);
+    margin: var(--page-content-margin);
+}
+
+
+
+.individualSearchedItemsContainer {
+    width: 100%;
+}
+
+.searchedItemImg {
+    width: 100%;
+}

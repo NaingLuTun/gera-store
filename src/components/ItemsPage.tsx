@@ -44,7 +44,7 @@ const ItemsPage = () => {
 
 
   return (
-    <div className="newItemsPage">
+    <div className="itemsPage">
       <NavBar />
       <div className="whichPageLinksContainer">
         <Link to="/home-page" className="whichPageLink">Home</Link>
@@ -52,8 +52,8 @@ const ItemsPage = () => {
         <Link to="/new-items" className="whichPageLink">{currentPageLink}</Link>
       </div>
 
-      <div className="newItemsHeaderContainer">
-        {/* MAKE THESE SEPERATE COMPONENT */}
+      <div className="itemsHeaderContainer">
+        
         {state.view === "viewNewItems" && (
           <> 
           {activeListBtn === 0 && <ItemsPageHeader header={newItemsPageHeaders[0]} />} 

@@ -103,8 +103,8 @@ export interface Sneaker {
 
 export const menSneaker: Array<Sneaker> = [
     {
-        id: "menWhiteSneaker",
-        name: "White Sneaker - Men",
+        id: "menWhiteSneakers",
+        name: "White Sneakers - Men",
         color: "white",
         img1: menWhiteSneakerImg1,
         img2: menWhiteSneakerImg2,
@@ -119,8 +119,8 @@ export const menSneaker: Array<Sneaker> = [
         size: null,
     },
     {
-        id: "menBlackSneaker",
-        name: "Black Sneaker - Men",
+        id: "menBlackSneakers",
+        name: "Black Sneakers - Men",
         color: "black",
         img1: menBlackSneakerImg1,
         img2: menBlackSneakerImg2,
@@ -135,8 +135,8 @@ export const menSneaker: Array<Sneaker> = [
         size: null,
     },
     {
-        id: "menBlueSneaker",
-        name: "Blue Sneaker - Men",
+        id: "menBlueSneakers",
+        name: "Blue Sneakers - Men",
         color: "blue",
         img1: menBlueSneakerImg1,
         img2: menBlueSneakerImg2,
@@ -151,8 +151,8 @@ export const menSneaker: Array<Sneaker> = [
         size: null,
     },
     {
-        id: "menBrownSneaker",
-        name: "Brown Sneaker - Men",
+        id: "menBrownSneakers",
+        name: "Brown Sneakers - Men",
         color: "brown",
         img1: menBrownSneakerImg1,
         img2: menBrownSneakerImg2,
@@ -167,8 +167,8 @@ export const menSneaker: Array<Sneaker> = [
         size: null,
     },
     {
-        id: "menGreenSneaker",
-        name: "Green Sneaker - Men",
+        id: "menGreenSneakers",
+        name: "Green Sneakers - Men",
         color: "green",
         img1: menGreenSneakerImg1,
         img2: menGreenSneakerImg2,
@@ -183,8 +183,8 @@ export const menSneaker: Array<Sneaker> = [
         size: null,
     },
     {
-        id: "menGreySneaker",
-        name: "Grey Sneaker - men",
+        id: "menGreySneakers",
+        name: "Grey Sneakers - men",
         color: "grey",
         img1: menGreySneakerImg1,
         img2: menGreySneakerImg2,
@@ -203,8 +203,8 @@ export const menSneaker: Array<Sneaker> = [
 
 export const womenSneaker: Array<Sneaker> = [
     {
-        id: "womenWhiteSneaker",
-        name: "White Sneaker - Women",
+        id: "womenWhiteSneakers",
+        name: "White Sneakers - Women",
         color: "white",
         img1: womenWhiteSneakerImg1,
         img2: womenWhiteSneakerImg2,
@@ -219,8 +219,8 @@ export const womenSneaker: Array<Sneaker> = [
         size: null,
     },
     {
-        id: "womenBlackSneaker",
-        name: "Black Sneaker - Women",
+        id: "womenBlackSneakers",
+        name: "Black Sneakers - Women",
         color: "black",
         img1: womenBlackSneakerImg1,
         img2: womenBlackSneakerImg2,
@@ -235,8 +235,8 @@ export const womenSneaker: Array<Sneaker> = [
         size: null,
     },
     {
-        id: "womenGreenSneaker",
-        name: "Green Sneaker - Women",
+        id: "womenGreenSneakers",
+        name: "Green Sneakers - Women",
         color: "green",
         img1: womenGreenSneakerImg1,
         img2: womenGreenSneakerImg2,
@@ -251,8 +251,8 @@ export const womenSneaker: Array<Sneaker> = [
         size: null,
     },
     {
-        id: "womenGreySneaker",
-        name: "Grey Sneaker - Women",
+        id: "womenGreySneakers",
+        name: "Grey Sneakers - Women",
         color: "grey",
         img1: womenGreySneakerImg1,
         img2: womenGreySneakerImg2,
@@ -267,8 +267,8 @@ export const womenSneaker: Array<Sneaker> = [
         size: null,
     },
     {
-        id: "womenPinkSneaker",
-        name: "Pink Sneaker - Women",
+        id: "womenPinkSneakers",
+        name: "Pink Sneakers - Women",
         color: "pink",
         img1: womenPinkSneakerImg1,
         img2: womenPinkSneakerImg2,
@@ -286,8 +286,8 @@ export const womenSneaker: Array<Sneaker> = [
 
 export const unisexSneaker: Array<Sneaker> = [
     {
-        id: "unisexWhiteSneaker",
-        name: "White Sneaker - Unisex",
+        id: "unisexWhiteSneakers",
+        name: "White Sneakers - Unisex",
         color: "white",
         img1: unisexWhiteSneakerImg1,
         img2: unisexWhiteSneakerImg2,
@@ -302,8 +302,8 @@ export const unisexSneaker: Array<Sneaker> = [
         size: null,
     },
     {
-        id: "unisexBlueSneaker",
-        name: "Blue Sneaker - Unisex",
+        id: "unisexBlueSneakers",
+        name: "Blue Sneakers - Unisex",
         color: "blue",
         img1: unisexBlueSneakerImg1,
         img2: unisexBlueSneakerImg2,
@@ -318,8 +318,8 @@ export const unisexSneaker: Array<Sneaker> = [
         size: null,
     },
     {
-        id: "unisexBrownSneaker",
-        name: "Brown Sneaker - Unisex",
+        id: "unisexBrownSneakers",
+        name: "Brown Sneakers - Unisex",
         color: "brown",
         img1: unisexBrownSneakerImg1,
         img2: unisexBrownSneakerImg2,
@@ -334,8 +334,8 @@ export const unisexSneaker: Array<Sneaker> = [
         size: null,
     },
     {
-        id: "unisexWhiteAndGreenSneaker",
-        name: "White and Green Sneaker - Unisex",
+        id: "unisexWhiteAndGreenSneakers",
+        name: "White and Green Sneakers - Unisex",
         color: "whiteAndGreen",
         img1: unisexWhiteAndGreenSneakerImg1,
         img2: unisexWhiteAndGreenSneakerImg2,
@@ -350,8 +350,8 @@ export const unisexSneaker: Array<Sneaker> = [
         size: null,
     },
     {
-        id: "unisexWhiteAndGreySneaker",
-        name: "White and Grey Sneaker - Unisex",
+        id: "unisexWhiteAndGreySneakers",
+        name: "White and Grey Sneakers - Unisex",
         color: "whiteAndGrey",
         img1: unisexWhiteAndGreySneakerImg1,
         img2: unisexWhiteAndGreySneakerImg2,

@@ -32,7 +32,7 @@
     --productListBtn-border-radius: 5px;
 }   
 
-.newItemsPage {
+.itemsPage {
     font-size: var(--normal-font-size);
     font-family: var(--normal-font-family);
     color: var(--text-color);
@@ -58,7 +58,7 @@
     text-decoration: none;
 }
 
-.newItemsHeaderContainer {
+.itemsHeaderContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,7 +66,7 @@
     padding: var(--page-content-padding);
 }
 
-.newItemsHeader {
+.itemsHeader {
     font-size: var(--large-font-size);
     font-family: var(--heading-font-family);
     font-weight: var(--heading-font-weight);
@@ -147,7 +147,6 @@ a:visited {
 
 .productImg {
     width: 100%;
-    border-radius: 2.5px;
 }
 
 
