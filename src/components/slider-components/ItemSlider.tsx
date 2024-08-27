@@ -12,6 +12,7 @@ import "swiper/css"
 import { useContext } from "react"
 
 import { useMediaQuery } from "react-responsive"
+import { Link } from "react-router-dom"
 
 interface ItemSliderProps {
     displayTextile?: boolean,
@@ -34,19 +35,19 @@ const ItemSlider = ({displayAccessory, displaySneakers, displayTextile}: ItemSli
     }
 
     const isTabletOrLargeScreen = useMediaQuery({query: "(min-width: 700px)"})
-    
+
     const is4kScreen = useMediaQuery({query: "(min-width: 2000px)"})
 
     const returnTextileItems = (items: Textile[] | undefined) => {
         return items ? items.slice(0, 3).map(item => (
             <SwiperSlide key={item.id} className="individualSliderContainer">
-                <a href="/view-item">
+                <Link to="/view-item">
                     <div onClick={() => handleViewProduct(item)} className="flex flex-col relative w-[80%]" >
                         <img src={item.img1} alt="t-shirt" className="sliderImg"/>
                         <p>{item.name}</p>
                         <p>{`$${item.price}`}</p>
                     </div>
-                </a>
+                </Link>
                 
             </SwiperSlide>
         )) : null
@@ -55,13 +56,13 @@ const ItemSlider = ({displayAccessory, displaySneakers, displayTextile}: ItemSli
     const returnSneakerItems = (items: Sneaker[] | undefined) => {
         return items ? items.slice(0, 2).map(item => (
             <SwiperSlide key={item.id} className="individualSliderContainer">
-                <a href="/view-item">
+                <Link to="/view-item">
                     <div onClick={() => handleViewProduct(item)} className="flex flex-col relative w-[80%]" >
                         <img src={item.img1} alt="t-shirt" className="sliderImg"/>
                         <p>{item.name}</p>
                         <p>{`$${item.price}`}</p>
                     </div>
-                </a>
+                </Link>
             </SwiperSlide>
             
         )) : null
@@ -70,13 +71,13 @@ const ItemSlider = ({displayAccessory, displaySneakers, displayTextile}: ItemSli
     const returnAccessoryItems = (items: Accessory[] | undefined) => {
         return items ? items.slice(0, 1).map(item => (
             <SwiperSlide key={item.id} className="individualSliderContainer">
-                <a href="/view-item">
+                <Link to="/view-item">
                     <div onClick={() => handleViewProduct(item)} className="flex flex-col relative w-[80%]">
                         <img src={item.img1} alt="t-shirt" className="sliderImg"/>
                         <p>{item.name}</p>
                         <p>{`$${item.price}`}</p>
                     </div>
-                </a>
+                </Link>
             </SwiperSlide>
             
         )) : null

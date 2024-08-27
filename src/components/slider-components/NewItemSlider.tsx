@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 
 import { useMediaQuery } from "react-responsive"
+import { Link } from "react-router-dom"
  
 
 
@@ -33,13 +34,13 @@ const NewItemSlider = () => {
             className="swiper-container">
                 {allNewProducts.map((product, index) => (
                         <SwiperSlide key={index} className="individualSliderContainer">
-                            <a href="/view-item">
+                            <Link to="/view-item">
                                 <div onClick={() => handleViewProduct(product)} className="flex flex-col relative w-[80%] ">
                                     <img src={product.img1} alt="t-shirt" className="sliderImg"/>
                                     <p>{product.name}</p>
                                     <p>{`$${product.price}`}</p>
                                 </div>
-                            </a>
+                            </Link>
                         </SwiperSlide>
 
                 ))}
