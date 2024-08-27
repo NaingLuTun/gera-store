@@ -14,7 +14,7 @@ const App: React.FC = () => {
   return (
     <>
     <ItemPageContextProvider>
-      <Router>
+      <Router basename="/gera-store">
         <Routes>
           <Route path="/home-page" element={<HomePage/>}/>
           <Route path="/items-page" element={<ItemsPage/>}/>
