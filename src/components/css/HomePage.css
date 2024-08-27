@@ -75,6 +75,7 @@
     padding: 5px 16px;
     border: none;
     border-radius: 3px;
+    color: var(--text-color);
 }
 
 .slidersContainer {
@@ -101,11 +102,11 @@
 
 .sliderDiscoverLink {
     font-family: var(--normal-font-family);
-    color: var(--text-color);
+    color: var(--text-color) !important;
 }
 
 .sliderDiscoverLink:visited{
-    color: var(--text-color);
+    color: var(--text-color) !important;
 }
 
 .quoteSection {
