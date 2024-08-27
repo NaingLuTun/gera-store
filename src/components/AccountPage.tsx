@@ -209,6 +209,8 @@ function AccountPage() {
   
   
                 <button onClick={handleRegister} className="registerButton">Register</button>
+
+                
                 
               </form>
   
@@ -220,14 +222,13 @@ function AccountPage() {
       </div> : 
 
       <div className="loggedInSection">
-            {getUserName === null ? <h2 className="loggedInHeading">{getUserName}</h2> : <h2 className="loggedInHeading">Joey Tribbiani</h2>}
+            {getUserName !== null ? <h2 className="loggedInHeading">{getUserName}</h2> : <h2 className="loggedInHeading">Joey Tribbiani</h2>}
             <p className="loggedInEmail">{getEmail}</p>
 
 
             <Link className="backToHomeLink" to="/home-page">Back to home</Link> 
 
             <button className="logOutButton" onClick={handleSignOut}>Log out</button>
-
             
       </div>
     
