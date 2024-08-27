@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom"
 import "./css/AddToCartModal.css"
 
 interface AddToCartModalProps {
@@ -42,8 +43,8 @@ function AddToCartModal({setViewAddToCartAvailable, itemName, itemImg, itemPrice
             </div>
 
             <div className="continueShoppingOrCheckOutBtnContainer">
-              <a href="/cart" className="checkoutBtn addToCartModalBtn">CheckOut</a>
-              <a onClick={() => setViewAddToCartAvailable(false)} className="continueShoppingBtn addToCartModalBtn">Continue shopping </a>
+              <Link to="/cart" className="checkoutBtn addToCartModalBtn">Check Out</Link>
+              <button onClick={() => setViewAddToCartAvailable(false)} className="continueShoppingBtn addToCartModalBtn">Continue shopping </button>
             </div>
             
         </div>
