@@ -3,7 +3,7 @@
 :root {
         /*////////// TEXTS //////////*/
     --small-font-size: 12px;
-    --normal-font-size: 14px;
+    --normal-font-size: 16px;
     --error-font-size: 18px;
     --large-font-size: 24px;
     --extra-large-font-size: 40px;
@@ -86,6 +86,11 @@
     color: var(--text-color);
 }
 
+.largeScreenViewProductContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .viewProductImg {
     width: 100%;
 }
@@ -141,6 +146,10 @@
     background-color: var(--sizeSelectorBtn-bg-color);
     border: var(--page-normal-border);
     border-radius: var(--sizeSelectorBtn-border-radius);
+}
+
+.sizeSelectorBtn:hover {
+    cursor: pointer;
 }
 
 .selectedBtn {
@@ -236,6 +245,7 @@
 }
 
 .writeReviewBtn:hover {
+    cursor: pointer;
     transition: 0.5s;
     color: var(--writeReviewBtn-hover-text-color);
     background-color: var(--writeReviewBtn-hover-bg-color);
@@ -256,7 +266,22 @@
     z-index: var(--addToCart-z-index);
 }
 
+.addToCartBtn:hover {
+    cursor: pointer;
+}
+
 .errorText {
     color: var(--red-text-color);
     font-size: var(--error-font-size);
+}
+
+@media (min-width: 700px) {
+    .addToCartBtn {
+        position: relative;
+        width: 20%;
+        margin: var(--page-content-margin);
+        bottom: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
 }

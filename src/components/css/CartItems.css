@@ -2,7 +2,7 @@
 
 :root {
     --small-font-size: 12px;
-    --normal-font-size: 14px;
+    --normal-font-size: 16px;
     --error-font-size: 18px;
     --large-font-size: 24px;
     --extra-large-font-size: 40px;
@@ -111,11 +111,14 @@
 }
 
 .cartItemCount {
-    padding: 5px 8px;
+    padding: 5px;
+    width: 25px;
+    text-align: center;
 }
 
 .changeCountBtn {
-    padding: 5px 8px;
+    padding: 5px;
+    width: 25px;
     border: none;
     background-color: white;
 }

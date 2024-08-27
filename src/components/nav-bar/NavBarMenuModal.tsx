@@ -10,6 +10,10 @@ import cartIcon from "../../assets/bag-shopping-svgrepo-com.svg"
 
 import {Link} from "react-router-dom"
 
+import { useNavigate } from "react-router-dom"
+
+import React, { useState } from "react"
+
 interface NavBarMenuModalProps {
     menuActive: boolean,
     setMenuActive: React.Dispatch<React.SetStateAction<boolean>>
@@ -18,6 +22,31 @@ interface NavBarMenuModalProps {
 function NavBarMenuModal({menuActive, setMenuActive}: NavBarMenuModalProps) {
     const handleCloseModal = () => {
         setMenuActive(!menuActive)
+    }
+
+    const [search, setSearch] = useState<string>("")
+    const navigate = useNavigate()
+
+    const handleSearch = () => {
+        if(search.trim() === "") {
+            return
+        }
+        
+        localStorage.setItem("search", search)
+
+        const event = new Event('searchUpdated')
+        window.dispatchEvent(event)
+        
+        navigate("/search")
+        if(window.location.href.includes("search")) {
+            handleCloseModal()
+        }
+    }
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if(e.key === "Enter") {
+            handleSearch()
+        }
     }
   return (
     <>
@@ -29,8 +58,8 @@ function NavBarMenuModal({menuActive, setMenuActive}: NavBarMenuModalProps) {
                     <div className="closeModalIcon"></div>
                 </button>
                 <div className="searchBarContainer">
-                    <input type="text" className="searchBar" placeholder="search"/>
-                    <img src={searchIcon} alt="search icon" className="searchIcon"/>
+                    <input type="text" className="searchBar" placeholder="search" value={search} onChange={(e) => setSearch(e.target.value)} onKeyDown={handleKeyDown}/>
+                    <Link className="searchBarLink" to="/search" onClick={handleSearch}><img src={searchIcon} alt="search icon" className="searchIcon"/></Link>
                 </div>
 
             </div>
@@ -84,11 +113,15 @@ function NavBarMenuModal({menuActive, setMenuActive}: NavBarMenuModalProps) {
 
                 <div className="individualMenuModalLinksContainer userIconAndCartIconContainer">
                     <div className="userIconContainer">
+                        <Link to="/account">
                         <img src={userIcon} alt="user account" className="menuModalUserIcon linkIcons"/>
+                        </Link>
                     </div>
 
                     <div className="cartIconContainer">
+                        <Link to="/cart">
                         <img src={cartIcon} alt="cart" className="menuModalCartIcon linkIcons" />
+                        </Link>
                     </div>
                 </div>
                     

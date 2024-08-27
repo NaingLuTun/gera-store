@@ -2,7 +2,7 @@
 
 :root {
     --small-font-size: 12px;
-    --normal-font-size: 14px;
+    --normal-font-size: 16px;
     --large-font-size: 24px;
     --extra-large-font-size: 40px;
     --normal-font-family: "Poppins", sans-serif;
@@ -15,7 +15,7 @@
     --white-text-color: white;
 
     /* ////////// footer //////////*/
-    --footer-bg-color: #425855;
+    --footer-bg-color: #325941;
 
     /* ////////// footerLinkContainer ////////// */
     --footerLinkContainer-bg-color: #f4f4f4;
@@ -102,6 +102,8 @@
 }
 
 .shopLinksWrapper .shopLinksContent   {
+    display: flex;
+    flex-direction: column;
     background-color: var(--footerLinkContainer-bg-color);
     width: 100%;
     height: 100%;
@@ -112,6 +114,8 @@
 }
 
 .contactLinksWrapper .contactLinksContent {
+    display: flex;
+    flex-direction: column;
     background-color: var(--footerLinkContainer-bg-color);
     width: 100%;
     height: 100%;
@@ -162,11 +166,13 @@
     }
 }
 
-.shopLinksContent > p {
+.shopLinksContent > a {
+    color: var(--text-color);
     margin-bottom: 10px;
 }
 
-.contactLinksContent > p {
+.contactLinksContent > a {
+    color: var(--text-color);
     margin-bottom: 10px;
 }
 

@@ -3,9 +3,10 @@
 :root {
     /*////////// TEXTS //////////*/
   --small-font-size: 12px;
-  --normal-font-size: 14px;
+  --normal-font-size: 16px;
   --large-font-size: 24px;
   --extra-large-font-size: 40px;
+  --home-page-slider-text-size: 35px;
   --normal-font-family: "Poppins", sans-serif;
   --normal-font-weight: 400;
   --bold-font-weight: 600;
@@ -24,7 +25,6 @@
     --quoteSection-bg-color: #181e40;
     --quoteSection-text-color: white;
     --quoteSection-padding: 50px 20px;
-
 
 }
 
@@ -52,12 +52,18 @@
     transform: translate(-50%, -50%);
     color: var(--slider-text-color);
     font-weight: var(--bold-font-weight);
-    font-size: var(--extra-large-font-size);
+    font-size: var(--home-page-slider-text-size);
+    text-wrap: nowrap;
 }
 
 .homePageTopSliderImg {
     width: 100%;
 }
+
+.topLargeImgSlider {
+    width: 100%;
+}
+
 
 .topImageSliderButton {
     font-family: var(--normal-font-family);

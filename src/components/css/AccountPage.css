@@ -2,7 +2,7 @@
 
 :root {
     --small-font-size: 12px;
-    --normal-font-size: 14px;
+    --normal-font-size: 16px;
     --input-font-size: 16px;
     --large-font-size: 24px;
     --extra-large-font-size: 40px;
@@ -47,6 +47,10 @@
     text-align: center;
 }
 
+.registerHeader {
+    margin: 100px 0 25px 0;
+}
+
 .exampleAccContainer {
     margin-bottom: 25px;
 }
@@ -88,6 +92,10 @@
     border-radius: 5px;
 }
 
+.signInButton:hover, .registerButton:hover, .logOutButton:hover {
+    cursor: pointer;
+}
+
 .forgotPasswordText {
     color: var(--text-color);
     text-decoration: underline;
@@ -123,4 +131,15 @@
 
 .backToHomeLink {
     text-decoration: underline;
+}
+
+@media (min-width: 700px) {
+    .signInSection, .registerSection {
+       padding: 0 20%;
+    }
+
+    .logOutButton {
+        margin: auto;
+        width: 20%;
+    }
 }

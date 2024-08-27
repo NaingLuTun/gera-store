@@ -1,6 +1,7 @@
 import "./css/Footer.css"
 import { useReducer } from "react"
 import paymentImg from "../assets/paymentsImg.png"
+import { Link } from "react-router-dom"
 
 interface InitialState {
     viewShopLinks: boolean,
@@ -43,28 +44,28 @@ function Footer() {
         <div  className="footerLinksContainer">
             <div onClick={() => dispatch({type: "viewShopLinks"})} className="individualFooterLinkContainer">
                 <p className="footerShopLinkTitle">SHOP</p>
-                <p className="plus">+</p>
+                <p className="plus">{state.viewShopLinks? "-" : "+"}</p>
             </div>
             {state.viewShopLinks && 
             <div className="shopLinksWrapper">
                 <div className="shopLinksContent">
-                    <p>Textile</p>
-                    <p>Sneakers</p>
-                    <p>Accessories</p>
+                    <Link to="/items-page" state={{view: "viewTextile"}} >Textile</Link>
+                    <Link to="/items-page" state={{view: "viewSneakers"}}>Sneakers</Link>
+                    <Link to="/items-page" state={{view: "viewAccessory"}}>Accessories</Link>
                 </div>
             </div>}
 
 
             <div onClick={() => dispatch({type: "viewContactLinks"})} className="individualFooterLinkContainer">
                 <p className="footerContactLinkTitile">CONTACT</p>
-                <p className="plus">+</p>
+                <p className="plus">{state.viewContactLinks? "-" : "+"}</p>
             </div>
             {state.viewContactLinks && 
             <div className="contactLinksWrapper">
                 <div className="contactLinksContent">
-                    <p>FAQ</p>
-                    <p>Write to us</p>
-                    <p>Legal notice</p>
+                    <a href="#">FAQ</a>
+                    <a href="#">Write to us</a>
+                    <a href="#">Legal notice</a>
                 </div>
             </div>}
         </div>

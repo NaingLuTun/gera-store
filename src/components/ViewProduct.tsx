@@ -23,7 +23,7 @@ import {Pagination} from "swiper/modules"
 
 import Footer from "./Footer"
 
-
+import { useMediaQuery } from "react-responsive"
 
 
 function ViewProduct() {
@@ -180,12 +180,22 @@ function ViewProduct() {
     }
 }
 
+  const isTabletOrLargeScreen = useMediaQuery({query: "(min-width: 700px)"})
+
   return (
     <div className="viewProductPage">
 
       <NavBar />
       <div className="viewProductBody">
+      {isTabletOrLargeScreen? 
+      <div className="largeScreenViewProductContainer">
+        {itemImgs.map((img, index) => (
+          <img src={img} key={index} className="viewProductImg" />
+        ))}
+      </div>
 
+      : 
+      
       <div className="flex items-center justify-center flex-col sliderContainer">
         <Swiper
         grabCursor={true} 
@@ -204,6 +214,8 @@ function ViewProduct() {
           ))}
         </Swiper>
       </div>
+      }
+      
         
       <div className="productInfoSection">
           
@@ -232,6 +244,8 @@ function ViewProduct() {
               
             </div>
             {addToCartAvailable === false && addToCartAvailable !== null ? <p className="errorText redText">Please choose a size.</p> : null}
+
+            <button onClick={handleAddToCart} className="addToCartBtn">Add to Cart</button>
           </div>
       )}
 
@@ -269,7 +283,7 @@ function ViewProduct() {
       
       </div>
 
-      <button onClick={handleAddToCart} className="addToCartBtn">Add to Cart</button>
+      
       {viewAddToCartAvailable && <AddToCartModal setViewAddToCartAvailable={setViewAddToCartAvailable} itemImg={itemToView?.img1} itemName={itemToView?.name} itemPrice={itemToView?.price}/>}
       
 

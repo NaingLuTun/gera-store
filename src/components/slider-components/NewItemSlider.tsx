@@ -7,6 +7,8 @@ import { Accessory } from "../constants/accessoryItemsData"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 import "swiper/css"
+
+import { useMediaQuery } from "react-responsive"
  
 
 
@@ -15,14 +17,19 @@ const NewItemSlider = () => {
     const handleViewProduct = (product: Textile | Sneaker | Accessory): void =>  {
         localStorage.setItem("viewItem", JSON.stringify(product))
     }
+
+    const isTabletOrLargeScreen = useMediaQuery({query: "(min-width: 700px)"})
+
+    const is4kScreen = useMediaQuery({query: "(min-width: 2000px)"})
+    
+    
     return (
-        
         <div className="flex items-center justify-center flex-col sliderContainer " >
             <Swiper
-            grabCursor={false} 
+            grabCursor={true} 
             centeredSlides={false}
             loop={false} 
-            slidesPerView={2}
+            slidesPerView={is4kScreen? 4 : isTabletOrLargeScreen? 3 : 2}
             className="swiper-container">
                 {allNewProducts.map((product, index) => (
                         <SwiperSlide key={index} className="individualSliderContainer">

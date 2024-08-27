@@ -2,7 +2,7 @@
 
 :root {
     --small-font-size: 12px;
-    --normal-font-size: 14px;
+    --normal-font-size: 16px;
     --error-font-size: 18px;
     --large-font-size: 24px;
     --extra-large-font-size: 40px;
@@ -92,4 +92,10 @@
 
 .searchedItemImg {
     width: 100%;
+}
+
+@media (min-width: 700px) {
+    .searchedItemsContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

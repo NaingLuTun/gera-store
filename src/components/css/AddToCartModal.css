@@ -2,7 +2,7 @@
 
 :root {
     --small-font-size: 12px;
-    --normal-font-size: 14px;
+    --normal-font-size: 16px;
     --error-font-size: 18px;
     --large-font-size: 24px;
     --extra-large-font-size: 40px;
@@ -104,6 +104,10 @@
     border-radius: 3px;
 }
 
+.addToCartModalBtn:hover {
+    cursor: pointer;
+}
+
 .checkoutBtn {
     color: white !important;
     background-color: var(--text-color);
@@ -114,4 +118,28 @@
     color: var(--text-color);
     background-color: white;
     border: var(--page-normal-border);
+}
+
+
+@media (min-width: 700px) {
+    .addToCartModalBody {
+        width: 100%;
+        padding: var(--page-content-padding);
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .addedItemImgContainer {
+        
+        width: 15%;
+    }
+    
+    .addedItemImg {
+        width: 100%;
+    }
+
+    .addedItemInfoBox {
+        width: 70%;
+    }
 }

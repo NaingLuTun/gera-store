@@ -3,7 +3,7 @@
 :root {
     /*////////// TEXTS //////////*/
   --small-font-size: 12px;
-  --normal-font-size: 14px;
+  --normal-font-size: 16px;
   --large-font-size: 24px;
   --normal-font-family: "Poppins", sans-serif;
   --normal-font-weight: 400;
@@ -57,6 +57,10 @@
     margin: var(--margin-between-elements);
 }
 
+.searchBarIcon:hover {
+    cursor: pointer;
+}
+
 .menu-button {
     background-color: transparent;
     border: none;
@@ -66,6 +70,10 @@
     justify-content: center;
     align-items: center;
     position: relative;
+}
+
+.menu-button:hover {
+    cursor: pointer;
 }
 
 .menu-icon, .menu-icon::before , .menu-icon::after {
