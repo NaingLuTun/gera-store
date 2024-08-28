@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
 
 // Update the interface to accept a flat array of specific product types
 interface ItemsPageDisplayProductsProps {
@@ -34,20 +35,20 @@ function ItemsPageDisplayProducts({ products }: ItemsPageDisplayProductsProps) {
           >
               <SwiperSlide>
                 <div className="flex flex-col relative w-[100%] sliderBox">
-                <a href="/view-item"><img className="productImg" src={product.img1} alt="product" /></a>
+                <Link to="/view-item"><img className="productImg" src={product.img1} alt="product" /></Link>
                 </div>
               </SwiperSlide>
             
               <SwiperSlide>
                 <div className="flex flex-col relative w-[100%] sliderBox">
-                <a  href="/view-item"><img className="productImg" src={product.img2} alt="product" /></a>
+                <Link  to="/view-item"><img className="productImg" src={product.img2} alt="product" /></Link>
                 </div>
               </SwiperSlide>
 
             {product.img3 && (
                 <SwiperSlide>
                 <div className="flex flex-col relative w-[100%] sliderBox">
-                <a  href="/view-item"><img className="productImg" src={product.img3} alt="product" /></a>
+                <Link  to="/view-item"><img className="productImg" src={product.img3} alt="product" /></Link>
                 </div>
               </SwiperSlide>
           

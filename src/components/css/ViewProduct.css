@@ -270,6 +270,10 @@
     cursor: pointer;
 }
 
+.addToCartBtnContainer {
+    padding: var(--page-content-padding);
+}
+
 .errorText {
     color: var(--red-text-color);
     font-size: var(--error-font-size);

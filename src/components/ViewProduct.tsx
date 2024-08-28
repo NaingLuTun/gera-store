@@ -245,15 +245,20 @@ function ViewProduct() {
             </div>
             {addToCartAvailable === false && addToCartAvailable !== null ? <p className="errorText redText">Please choose a size.</p> : null}
 
-            <button onClick={handleAddToCart} className="addToCartBtn">Add to Cart</button>
+            
           </div>
       )}
+
+      <div className="addToCartBtnContainer">
+        <button onClick={handleAddToCart} className="addToCartBtn">Add to Cart</button>
+      </div>
+      
 
       <div className="featuresSection">
         <h2 className="featuresHeader header">Features</h2>
         <div onClick={() => setViewComposition(!viewComposition)} className={`individualFeatureContainer ${viewComposition? "activeContainer" : ""}`}>
           <p>Composition</p>
-          <p>+</p> 
+          <p>{viewComposition? "-" : "+"}</p> 
         </div>
         {viewComposition && (
           <>
@@ -265,7 +270,7 @@ function ViewProduct() {
 
         <div onClick={() => setViewCharacteristics(!viewCharacteristics)} className={`individualFeatureContainer ${viewCharacteristics? "activeContainer" : ""}`}>
           <p>Characteristics</p>
-          <p>+</p> 
+          <p>{viewCharacteristics? "-" : "+"}</p> 
         </div>
         {viewCharacteristics && (
           <>

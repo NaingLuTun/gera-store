@@ -113,6 +113,7 @@
     padding: var(--productListBtn-padding);
     border: var(--productListBtn-border-radius);
     border-radius: 5px;
+    color: var(--text-color);
 }
 
 .activeListBtn {
