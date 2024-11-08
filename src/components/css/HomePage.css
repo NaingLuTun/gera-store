@@ -78,6 +78,10 @@
     color: var(--text-color);
 }
 
+.topImageSliderButton:hover {
+    cursor: pointer;
+}
+
 .slidersContainer {
     padding: var(--slidersContainer-padding);
 }
@@ -108,6 +112,10 @@
 .sliderDiscoverLink:visited{
     color: var(--text-color) !important;
 }
+
+/* .sliderDiscoverLink:hover {
+    cursor: pointer !important;
+} */
 
 .quoteSection {
     background-color: var(--quoteSection-bg-color);

@@ -87,6 +87,10 @@
     font-size: var(--large-font-size);
 }
 
+.plus:hover {
+    cursor: pointer;
+}
+
 .shopLinksWrapper {
     width: 100%;
     height: 100%;
